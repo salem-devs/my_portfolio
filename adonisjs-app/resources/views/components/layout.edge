@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ben Salem - Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        tesoro: {
+                            mint: '#a7eab6',
+                            dark: '#1f1f1f',
+                            orange: '#ff9033',
+                            yellow: '#ffcc00',
+                            card: '#2a2a2a',
+                            sand: '#feebc9',
+                            coral: 'rgb(255, 199, 187)'
+                        }
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' }
+                        },
+                        'fade-in-up': {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        'spin-slow': {
+                            '0%': { transform: 'rotate(0deg)' },
+                            '100%': { transform: 'rotate(360deg)' }
+                        }
+                    },
+                    animation: {
+                        marquee: 'marquee 25s linear infinite',
+                        'fade-in-up': 'fade-in-up 0.8s ease-out forwards',
+                        'spin-slow': 'spin-slow 15s linear infinite'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body id="app-body" class="bg-tesoro-mint font-sans text-black selection:bg-tesoro-orange selection:text-white min-h-screen flex flex-col transition-colors duration-700 ease-in-out">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-transparent py-6 px-8 md:px-20 flex justify-between items-center transition-all">
+        <div class="name">
+            <a href="/" class="text-3xl font-black tracking-tight hover:text-tesoro-orange transition-colors">Ben Salem.</a>
+        </div>
+        <div class="hidden md:flex items-center gap-8">
+            <!-- Menu Classique -->
+            <ul class="flex gap-4 items-center font-bold text-sm uppercase tracking-wide">
+                <li><a href="#cv" class="block px-4 py-2 bg-white/40 text-black hover:bg-tesoro-orange transition-colors [clip-path:polygon(8px_0%,calc(100%-8px)_0%,calc(100%-8px)_25%,100%_25%,100%_75%,calc(100%-8px)_75%,calc(100%-8px)_100%,8px_100%,8px_75%,0%_75%,0%_25%,8px_25%)]">CV</a></li>
+                <li><a href="#projets" class="block px-4 py-2 bg-white/40 text-black hover:bg-tesoro-orange transition-colors [clip-path:polygon(8px_0%,calc(100%-8px)_0%,calc(100%-8px)_25%,100%_25%,100%_75%,calc(100%-8px)_75%,calc(100%-8px)_100%,8px_100%,8px_75%,0%_75%,0%_25%,8px_25%)]">Projets</a></li>
+                <li><a href="#contact" class="block px-4 py-2 bg-white/40 text-black hover:bg-tesoro-orange transition-colors [clip-path:polygon(8px_0%,calc(100%-8px)_0%,calc(100%-8px)_25%,100%_25%,100%_75%,calc(100%-8px)_75%,calc(100%-8px)_100%,8px_100%,8px_75%,0%_75%,0%_25%,8px_25%)]">Contact</a></li>
+            </ul>
+            
+            <!-- Liens Externes & CV -->
+            <div class="flex items-center gap-5 border-l-2 border-black/20 pl-8">
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/salem-kongolo-32ba57290" target="_blank" class="text-black hover:text-tesoro-orange hover:-translate-y-1 transition-all">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <!-- Télécharger CV -->
+                <a href="/cv.pdf" download class="bg-black text-tesoro-mint font-black text-xs md:text-sm uppercase tracking-widest px-6 py-2.5 rounded-full border-2 border-black hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#ff9033] transition-all">
+                    Télécharger CV
+                </a>
+            </div>
+        </div>
+        <img class="block md:hidden w-8 cursor-pointer" src="/images/menu.svg" alt="menu">
+    </header>
+
+    <div class="flex-grow">
+        {{{ await $slots.main() }}}
+    </div>
+
+    <footer class="bg-tesoro-dark text-white py-16 px-8 md:px-20 mt-auto">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-10">
+            <div class="flex flex-col gap-2">
+                <h5 class="text-tesoro-mint font-bold text-xl mb-2">Contact</h5>
+                <p class="text-gray-400 hover:text-white transition-colors">+243 822 234 345</p>
+                <p class="text-gray-400 hover:text-white transition-colors">sergio@gmail.com</p>
+            </div>
+            <div class="flex flex-col gap-2">
+                <h5 class="text-tesoro-mint font-bold text-xl mb-2">Réseaux</h5>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-tesoro-orange transition-colors duration-300">
+                        <img src="/images/facebook_logo.png" alt="facebook" class="h-5">
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-tesoro-orange transition-colors duration-300">
+                        <img src="/images/instagram.jpeg" alt="instagram" class="h-5 rounded-full">
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-tesoro-orange transition-colors duration-300">
+                        <img src="/images/linkdin.jpeg" alt="linkedin" class="h-5 rounded-full">
+                    </a>
+                </div>
+            </div>
+            <div class="flex flex-col justify-end">
+                <p class="text-gray-500 font-medium">© 2025 Ben Salem.<br>Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const body = document.getElementById('app-body');
+            const sections = document.querySelectorAll('section[data-bg]');
+            
+            // L'IntersectionObserver détecte quand une section arrive au milieu de l'écran
+            const observerOptions = {
+                root: null,
+                rootMargin: '-40% 0px -40% 0px', 
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const bgColor = entry.target.getAttribute('data-bg');
+                        
+                        // Retirer toutes les couleurs de fond possibles
+                        body.classList.remove('bg-tesoro-mint', 'bg-tesoro-yellow', 'bg-tesoro-dark', 'bg-tesoro-orange', 'bg-white', 'bg-tesoro-sand', 'bg-tesoro-coral');
+                        
+                        // Ajouter la nouvelle couleur
+                        body.classList.add(bgColor);
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

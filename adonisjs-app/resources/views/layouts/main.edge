@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@yield('title', 'Ben Salem - Portfolio')</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <div class="header_container">
+            <div class="name">
+                <a href="/"><h2>Ben Salem</h2></a>
+                <img class="img_menu" src="/images/menu.svg" alt="menu">
+            </div>
+            <ul class="menu">
+                <a href="/cv"><li>CV</li></a>
+                <div class="menu_divider"></div>
+                <a href="/projets"><li>Projets</li></a>
+                <div class="menu_divider"></div>
+                <a href="/contact"><li>Contact</li></a>
+            </ul>
+        </div>
+    </header>
+
+    @yield('content')
+
+    <footer class="foot">
+        <div class="foot_divider"></div>
+        <div class="contacter_moi">
+            <div class="alin">
+                <h5>Telephone</h5>
+                <p>+243 822 234 345</p>
+            </div>
+            <div class="alin">
+                <h5>Email</h5>
+                <p>sergio@gmail.com</p>
+            </div>
+            <div class="alin">
+                <h5>Suivez-moi</h5>
+                <div class="logo">
+                    <a href=""><img src="/images/facebook_logo.png" alt="facebook"></a>
+                    <a href=""><img src="/images/instagram.jpeg" alt="instagram"></a>
+                    <a href=""><img src="/images/linkdin.jpeg" alt="linkedin"></a>
+                </div>
+            </div>
+            <div class="alin">
+                <p>© 2025 By Ben Salem</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
