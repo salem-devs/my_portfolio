@@ -1,0 +1,113 @@
+    <!-- PROJETS SECTION -->
+    <section id="projets" data-bg="bg-tesoro-coral" class="max-w-6xl mx-auto px-8 md:px-20 py-24 scroll-mt-24">
+        <div class="projets-card bg-tesoro-dark rounded-[3rem] p-10 md:p-20 text-white shadow-2xl border-4 border-black" style="transform-origin: center top; will-change: transform, opacity;">
+            <h1 class="text-5xl md:text-7xl font-black mb-16 text-center text-tesoro-mint">Tout mon portfolio.<br><span class="text-tesoro-orange">Une seule page.</span></h1>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Projet 1 -->
+                <div class="group bg-tesoro-card rounded-[2rem] p-8 border-2 border-transparent hover:border-tesoro-orange transition-all hover:-translate-y-2 cursor-pointer flex flex-col gap-6">
+                    <div class="rounded-xl overflow-hidden border-2 border-black">
+                        <img src="/images/dr.Norman.png" alt="Dr Norman" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div>
+                        <h4 class="text-3xl font-black text-tesoro-orange mb-4">Dr Norman</h4>
+                        <p class="text-gray-400 font-medium leading-relaxed">Mon tout premier projet web a été la création d'un site dédié au Dr Norman. Ce projet m'a permis de découvrir les bases du HTML et du CSS tout en travaillant sur la structuration.</p>
+                    </div>
+                </div>
+
+                <!-- Projet 2 -->
+                <div class="group bg-tesoro-card rounded-[2rem] p-8 border-2 border-transparent hover:border-tesoro-yellow transition-all hover:-translate-y-2 cursor-pointer flex flex-col gap-6">
+                    <div class="rounded-xl overflow-hidden border-2 border-black">
+                        <img src="/images/opera_img.png" alt="Sunnyside" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div>
+                        <h4 class="text-3xl font-black text-tesoro-yellow mb-4">Sunnyside</h4>
+                        <p class="text-gray-400 font-medium leading-relaxed">Le projet Sunny Side est un site vitrine moderne réalisé pour une agence créative. Il m'a permis de mettre en pratique le HTML et le CSS tout en travaillant sur un design responsive.</p>
+                    </div>
+                </div>
+
+                <!-- Projet 3 -->
+                <div class="group bg-tesoro-card rounded-[2rem] p-8 border-2 border-transparent hover:border-tesoro-mint transition-all hover:-translate-y-2 cursor-pointer flex flex-col gap-6">
+                    <div class="rounded-xl overflow-hidden border-2 border-black">
+                        <img src="/images/challenge2.png" alt="Pet Store" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div>
+                        <h4 class="text-3xl font-black text-tesoro-mint mb-4">Pet Store & Beyond</h4>
+                        <p class="text-gray-400 font-medium leading-relaxed">Pet Store & Beyond est un projet de site e-commerce fictif dédié aux animaux. J'y ai travaillé l'intégration en HTML et CSS, tout en réalisant un design responsive.</p>
+                    </div>
+                </div>
+
+                <!-- Projet 4 -->
+                <div class="group bg-tesoro-card rounded-[2rem] p-8 border-2 border-transparent hover:border-white transition-all hover:-translate-y-2 cursor-pointer flex flex-col gap-6">
+                    <div class="rounded-xl overflow-hidden border-2 border-black">
+                        <img src="/images/challenge2-1.png" alt="Reelup Shopify" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div>
+                        <h4 class="text-3xl font-black text-white mb-4">Reelup sur Shopify</h4>
+                        <p class="text-gray-400 font-medium leading-relaxed">Le challenge Reelup sur Shopify portait sur la personnalisation de l'interface avec du CSS. Nous avons appliqué des media queries pour rendre le design responsive.</p>
+                    </div>
+                </div>
+
+                <!-- Projet 5 -->
+                <div class="group bg-tesoro-card rounded-[2rem] p-8 border-2 border-transparent hover:border-tesoro-orange transition-all hover:-translate-y-2 cursor-pointer flex flex-col gap-6">
+                    <div class="rounded-xl overflow-hidden border-2 border-black">
+                        <img src="/images/boot_camp.png" alt="Boot camp" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div>
+                        <h4 class="text-3xl font-black text-tesoro-orange mb-4">Boot camp</h4>
+                        <p class="text-gray-400 font-medium leading-relaxed">Le projet consistait à concevoir une landing page Netflix en utilisant Figma. J'ai travaillé sur la mise en page, le design visuel et l'ergonomie de la page.</p>
+                    </div>
+                </div>
+
+                <!-- Projet 6 -->
+                <div class="group bg-tesoro-card rounded-[2rem] p-8 border-2 border-transparent hover:border-tesoro-yellow transition-all hover:-translate-y-2 cursor-pointer flex flex-col gap-6">
+                    <div class="rounded-xl overflow-hidden border-2 border-black">
+                        <img src="/images/figma_netflix.png" alt="Netflix Landing Page" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div>
+                        <h4 class="text-3xl font-black text-tesoro-yellow mb-4">Landing Page Netflix</h4>
+                        <p class="text-gray-400 font-medium leading-relaxed">Le projet consistait à concevoir une landing page Netflix en utilisant Figma. J'ai travaillé sur la mise en page, le design visuel et l'ergonomie de la page.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Script pour l'animation au scroll -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const section = document.getElementById('projets');
+            const card = section.querySelector('.projets-card');
+            
+            // On initialise la taille de base si l'utilisateur est tout en haut
+            card.style.transform = 'scale(0.5)';
+            card.style.opacity = '0';
+
+            window.addEventListener('scroll', () => {
+                const rect = section.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                
+                // Point de départ : quand le haut de la section entre dans l'écran
+                const startPos = windowHeight; 
+                // Point de fin : quand la section est arrivée à 20% du haut de l'écran
+                const endPos = windowHeight * 0.2; 
+                
+                // Calcul de la progression (de 0 à 1)
+                let progress = (startPos - rect.top) / (startPos - endPos);
+                
+                // On limite la progression entre 0 (début) et 1 (fin)
+                progress = Math.max(0, Math.min(1, progress));
+                
+                // On anime l'échelle de 0.5 à 1
+                const scale = 0.5 + (0.5 * progress);
+                // On anime l'opacité pour que ça apparaisse doucement
+                const opacity = progress;
+                
+                card.style.transform = `scale(${scale})`;
+                card.style.opacity = opacity;
+            }, { passive: true });
+            
+            // Déclencher un scroll artificiel au chargement au cas où l'utilisateur est déjà en bas
+            window.dispatchEvent(new Event('scroll'));
+        });
+    </script>
