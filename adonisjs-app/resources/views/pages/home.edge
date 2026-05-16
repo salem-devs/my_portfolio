@@ -1,0 +1,53 @@
+@layout()
+    <!-- HERO SECTION -->
+    <section id="home" data-bg="bg-tesoro-mint" class="w-full relative min-h-[90vh] flex flex-col md:flex-row items-center pt-24 md:pt-32 pb-16 overflow-hidden px-8 md:px-20">
+        <div class="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center gap-12 md:gap-20">
+            
+            <!-- IMAGE CERCLE (A gauche) -->
+            <div class="w-full md:w-[45%] flex justify-center md:justify-start mb-12 md:mb-0">
+                <div class="relative w-[60vw] h-[60vw] md:w-[20rem] md:h-[20rem] lg:w-[24rem] lg:h-[24rem]">
+                    <!-- Fond jaune décalé -->
+                    <div class="absolute inset-0 bg-tesoro-yellow rounded-full translate-x-4 translate-y-4 md:translate-x-6 md:translate-y-6"></div>
+                    <!-- Image principale avec bordure noire -->
+                    <img src="/images/salem.jpg" class="absolute inset-0 w-full h-full object-cover rounded-full border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]" alt="mon image Salem">
+                </div>
+            </div>
+
+            <!-- TEXTE (A droite) -->
+            <div class="w-full md:w-[55%] flex flex-col gap-8 relative z-10">
+                <div>
+                    <h1 class="text-[5.5rem] md:text-7xl lg:text-[6.5rem] font-black leading-[0.9] tracking-tighter mb-4 text-black">
+                        Tourner vos idées <span class="inline-flex items-center gap-2 bg-tesoro-yellow text-black text-xl md:text-3xl px-5 py-2 rounded-full border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] -rotate-6 align-middle mx-2 font-bold uppercase tracking-widest hover:rotate-0 transition-transform">
+                            <span>✨</span> Créatives
+                        </span><br>en <span class="text-tesoro-orange">réalités.</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl font-medium leading-relaxed text-black/80 mt-6 max-w-xl">
+                        Je suis Ben Salem, un développeur web passionné doté d'une créativité débordante et d'un talent pour concrétiser des projets en expériences numériques interactives.
+                    </p>
+                </div>
+                <!-- 3 Boutons -->
+                <div class="flex flex-wrap gap-4 mt-4">
+                    <a href="#cv" class="px-8 py-4 bg-tesoro-orange text-black font-black text-xl rounded-[2rem] border-2 border-black hover:-translate-y-1 transition-all">
+                        Mon CV
+                    </a>
+                    <a href="#projets" class="px-8 py-4 bg-tesoro-dark text-white font-black text-xl rounded-[2rem] border-2 border-black hover:-translate-y-1 transition-all">
+                        Mes Projets
+                    </a>
+                    <a href="#contact" class="px-8 py-4 bg-white text-black font-black text-xl rounded-[2rem] border-2 border-black hover:-translate-y-1 transition-all">
+                        Contact
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CV SECTION -->
+    @!component('components/cv_section')
+
+    <!-- PROJETS SECTION -->
+    @!component('components/projets_section')
+
+    <!-- CONTACT SECTION -->
+    @!component('components/contact_section')
+@end
