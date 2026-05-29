@@ -22,12 +22,17 @@
                     colors: {
                         tesoro: {
                             mint: '#a7eab6',
+                            moim: '#fef1e4',
+                            perso: '#d7d7d7',
                             dark: '#1f1f1f',
                             orange: '#ff9033',
                             yellow: '#ffcc00',
                             card: '#2a2a2a',
                             sand: '#feebc9',
-                            coral: 'rgb(255, 199, 187)'
+                            coral: '#faf6ef',
+                            cora: 'rgb(255, 199, 187)'
+
+
                         }
                     },
                     keyframes: {
@@ -58,7 +63,7 @@
 <body id="app-body" class="bg-tesoro-mint font-sans text-black selection:bg-tesoro-orange selection:text-white min-h-screen flex flex-col transition-colors duration-700 ease-in-out">
     <header class="fixed top-0 left-0 right-0 z-50 bg-transparent py-6 px-8 md:px-20 flex justify-between items-center transition-all">
         <div class="name">
-            <a href="/" class="text-3xl font-black tracking-tight hover:text-tesoro-orange transition-colors">Ben Salem.</a>
+            <a href="/" class="text-3xl font-black tracking-tight hover:text-tesoro-orange transition-colors">BenSalem K.</a>
         </div>
         <div class="hidden md:flex items-center gap-8">
             <!-- Menu Classique -->
@@ -71,11 +76,11 @@
             <!-- Liens Externes & CV -->
             <div class="flex items-center gap-5 border-l-2 border-black/20 pl-8">
                 <!-- LinkedIn -->
-                <a href="https://linkedin.com/in/salem-kongolo-32ba57290" target="_blank" class="text-black hover:text-tesoro-orange hover:-translate-y-1 transition-all">
+                <a href="https://www.linkedin.com/in/salem-kongolo-32ba57290/" target="_blank" class="text-black hover:text-tesoro-orange hover:-translate-y-1 transition-all">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                 </a>
                 <!-- Télécharger CV -->
-                <a href="/cv.pdf" download class="bg-black text-tesoro-mint font-black text-xs md:text-sm uppercase tracking-widest px-6 py-2.5 rounded-full border-2 border-black hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#ff9033] transition-all">
+                <a href="/CV_KADEA.pdf" download class="bg-black text-tesoro-mint font-black text-xs md:text-sm uppercase tracking-widest px-6 py-2.5 rounded-full border-2 border-black hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#ff9033] transition-all">
                     Télécharger CV
                 </a>
             </div>
@@ -91,8 +96,8 @@
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-10">
             <div class="flex flex-col gap-2">
                 <h5 class="text-tesoro-mint font-bold text-xl mb-2">Contact</h5>
-                <p class="text-gray-400 hover:text-white transition-colors">+243 822 234 345</p>
-                <p class="text-gray-400 hover:text-white transition-colors">sergio@gmail.com</p>
+                <p class="text-gray-400 hover:text-white transition-colors">+243 822 303 668</p>
+                <p class="text-gray-400 hover:text-white transition-colors">salemko801@gmail.com</p>
             </div>
             <div class="flex flex-col gap-2">
                 <h5 class="text-tesoro-mint font-bold text-xl mb-2">Réseaux</h5>
@@ -109,11 +114,11 @@
                 </div>
             </div>
             <div class="flex flex-col justify-end">
-                <p class="text-gray-500 font-medium">© 2025 Ben Salem.<br>Tous droits réservés.</p>
+                <p class="text-gray-500 font-medium">© 2025 Salem Kongolo.<br>Tous droits réservés.</p>
             </div>
         </div>
     </footer>
-    <script>
+    {{--  <script>
         document.addEventListener('DOMContentLoaded', () => {
             const body = document.getElementById('app-body');
             const sections = document.querySelectorAll('section[data-bg]');
@@ -143,6 +148,34 @@
                 observer.observe(section);
             });
         });
-    </script>
+    </script>  --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const body = document.getElementById('app-body');
+    const sections = document.querySelectorAll('section[data-bg]');
+    const bgClasses = ['bg-tesoro-mint', 'bg-tesoro-yellow', 'bg-tesoro-dark', 'bg-tesoro-orange', 'bg-white', 'bg-tesoro-sand', 'bg-tesoro-coral', 'bg-tesoro-cora', 'bg-tesoro-perso'];
+
+    function updateBodyBackground() {
+        const triggerPoint = window.innerHeight / 2;
+        let currentBg = sections[0].getAttribute('data-bg');
+
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+
+            if (rect.top <= triggerPoint) {
+                currentBg = section.getAttribute('data-bg');
+            }
+        });
+
+        body.classList.remove(...bgClasses);
+        body.classList.add(currentBg);
+    }
+
+    window.addEventListener('scroll', updateBodyBackground, { passive: true });
+    window.addEventListener('resize', updateBodyBackground);
+
+    updateBodyBackground();
+});
+        </script>
 </body>
 </html>
