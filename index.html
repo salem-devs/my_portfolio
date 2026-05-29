@@ -212,26 +212,6 @@
         });
       });
 
-      window.setupMobileReveal = (element) => {
-        if (!element) return;
-
-        element.classList.add("mobile-reveal-ready");
-
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                element.classList.add("mobile-reveal-visible");
-                observer.unobserve(element);
-              }
-            });
-          },
-          { threshold: 0.15 },
-        );
-
-        observer.observe(element);
-      };
-
       document.addEventListener("DOMContentLoaded", () => {
         const header = document.querySelector("header");
         let lastScrollY = window.scrollY;
@@ -264,20 +244,6 @@
         overflow-x: hidden;
       }
 
-      @media (max-width: 767px) {
-        .mobile-reveal-ready {
-          opacity: 0;
-          transform: translateY(18px);
-          transition:
-            opacity 520ms ease,
-            transform 520ms ease;
-        }
-
-        .mobile-reveal-visible {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
     </style>
 
     <div class="flex-grow">
@@ -654,11 +620,6 @@
             box-shadow: 5px 5px 0 rgba(0, 0, 0, 1);
           }
 
-          #cv .border-l-4 > div:hover {
-            transform: none;
-            box-shadow: 5px 5px 0 rgba(0, 0, 0, 1);
-          }
-
           #cv ul {
             font-size: 0.98rem;
             line-height: 1.45;
@@ -691,12 +652,6 @@
           const reducedMotion = window.matchMedia(
             "(prefers-reduced-motion: reduce)",
           ).matches;
-          const isMobile = window.matchMedia("(max-width: 767px)").matches;
-
-          if (isMobile && !reducedMotion) {
-            window.setupMobileReveal(card);
-            return;
-          }
 
           if (reducedMotion) {
             card.style.transform = "scale(1)";
@@ -1049,11 +1004,11 @@
         </div>
       </section>
 
-      <!-- Script pour l'animation au scroll -->
-      <style>
-        @media (max-width: 767px) {
-          #projets .projets-card {
-            border-width: 3px;
+    <!-- Script pour l'animation au scroll -->
+    <style>
+      @media (max-width: 767px) {
+        #projets .projets-card {
+          border-width: 3px;
             border-radius: 1.5rem;
             padding: 1rem;
             box-shadow: 6px 6px 0 rgba(0, 0, 0, 1);
@@ -1073,10 +1028,6 @@
             gap: 1rem;
             border-radius: 1.25rem;
             padding: 1rem;
-          }
-
-          #projets .group:hover {
-            transform: none;
           }
 
           #projets img {
@@ -1107,12 +1058,6 @@
           const reducedMotion = window.matchMedia(
             "(prefers-reduced-motion: reduce)",
           ).matches;
-          const isMobile = window.matchMedia("(max-width: 767px)").matches;
-
-          if (isMobile && !reducedMotion) {
-            window.setupMobileReveal(card);
-            return;
-          }
 
           if (reducedMotion) {
             card.style.transform = "scale(1)";
@@ -1359,14 +1304,8 @@
           const reducedMotion = window.matchMedia(
             "(prefers-reduced-motion: reduce)",
           ).matches;
-          const isMobile = window.matchMedia("(max-width: 767px)").matches;
 
           if (!card) return;
-
-          if (isMobile && !reducedMotion) {
-            window.setupMobileReveal(card);
-            return;
-          }
 
           if (reducedMotion) {
             card.classList.remove("gift-hidden", "animate-gift-pop");
