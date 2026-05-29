@@ -4,6 +4,8 @@
 
 - ❌ **Balise non fermée** : chaque balise ouvrante doit avoir une balise fermante.
 
+- ❌ **Balise `<script>` mal placée** : ne mettez pas vos scripts dans `<head>`. 💡 Placez-les avant `</body>`.
+
 
 
 # Feedback CSS
