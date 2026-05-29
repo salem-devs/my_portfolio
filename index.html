@@ -1,162 +1,337 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="fr" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ben Salem - Portfolio</title>
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Outfit', 'sans-serif'],
-                    },
-                    colors: {
-                        tesoro: {
-                            mint: '#a7eab6',
-                            moim: '#fef1e4',
-                            perso: '#d7d7d7',
-                            dark: '#1f1f1f',
-                            orange: '#ff9033',
-                            yellow: '#ffcc00',
-                            card: '#2a2a2a',
-                            sand: '#feebc9',
-                            coral: '#faf6ef',
-                            cora: 'rgb(255, 199, 187)'
-
-
-                        }
-                    },
-                    keyframes: {
-                        marquee: {
-                            '0%': { transform: 'translateX(0%)' },
-                            '100%': { transform: 'translateX(-100%)' }
-                        },
-                        'fade-in-up': {
-                            '0%': { opacity: '0', transform: 'translateY(30px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' }
-                        },
-                        'spin-slow': {
-                            '0%': { transform: 'rotate(0deg)' },
-                            '100%': { transform: 'rotate(360deg)' }
-                        }
-                    },
-                    animation: {
-                        marquee: 'marquee 25s linear infinite',
-                        'fade-in-up': 'fade-in-up 0.8s ease-out forwards',
-                        'spin-slow': 'spin-slow 15s linear infinite'
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Outfit", "sans-serif"],
+            },
+            colors: {
+              tesoro: {
+                mint: "#a7eab6",
+                moim: "#fef1e4",
+                perso: "#d7d7d7",
+                dark: "#1f1f1f",
+                orange: "#ff9033",
+                yellow: "#ffcc00",
+                card: "#2a2a2a",
+                sand: "#feebc9",
+                coral: "#faf6ef",
+                cora: "rgb(255, 199, 187)",
+              },
+            },
+            keyframes: {
+              marquee: {
+                "0%": { transform: "translateX(0%)" },
+                "100%": { transform: "translateX(-100%)" },
+              },
+              "fade-in-up": {
+                "0%": { opacity: "0", transform: "translateY(30px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              "spin-slow": {
+                "0%": { transform: "rotate(0deg)" },
+                "100%": { transform: "rotate(360deg)" },
+              },
+            },
+            animation: {
+              marquee: "marquee 25s linear infinite",
+              "fade-in-up": "fade-in-up 0.8s ease-out forwards",
+              "spin-slow": "spin-slow 15s linear infinite",
+            },
+          },
+        },
+      };
     </script>
-</head>
-<body id="app-body" class="bg-tesoro-mint font-sans text-black selection:bg-tesoro-orange selection:text-white min-h-screen flex flex-col transition-colors duration-700 ease-in-out">
-    <header class="fixed top-0 left-0 right-0 z-50 bg-white/85 md:bg-transparent backdrop-blur-md md:backdrop-blur-0 py-4 md:py-6 px-5 md:px-20 flex justify-between items-center transition-all">
-        <div class="name">
-            <a href="/" class="text-2xl sm:text-3xl font-black tracking-tight hover:text-tesoro-orange transition-colors">BenSalem K.</a>
+  </head>
+  <body
+    id="app-body"
+    class="bg-tesoro-mint font-sans text-black selection:bg-tesoro-orange selection:text-white min-h-screen flex flex-col overflow-x-hidden transition-colors duration-700 ease-in-out"
+  >
+    <header
+      class="fixed top-0 left-0 right-0 z-50 bg-white/85 md:bg-transparent backdrop-blur-md md:backdrop-blur-0 py-4 md:py-6 px-5 md:px-20 flex justify-between items-center transition-all"
+    >
+      <div class="name">
+        <a
+          href="/"
+          class="text-2xl sm:text-3xl font-black tracking-tight hover:text-tesoro-orange transition-colors"
+          >BenSalem K.</a
+        >
+      </div>
+      <div class="hidden md:flex items-center gap-8">
+        <!-- Menu Classique -->
+        <ul
+          class="flex gap-4 items-center font-bold text-sm uppercase tracking-wide"
+        >
+          <li>
+            <a
+              href="#cv"
+              class="block px-4 py-2 bg-white/40 text-black hover:bg-tesoro-orange transition-colors [clip-path:polygon(8px_0%,calc(100%-8px)_0%,calc(100%-8px)_25%,100%_25%,100%_75%,calc(100%-8px)_75%,calc(100%-8px)_100%,8px_100%,8px_75%,0%_75%,0%_25%,8px_25%)]"
+              >CV</a
+            >
+          </li>
+          <li>
+            <a
+              href="#projets"
+              class="block px-4 py-2 bg-white/40 text-black hover:bg-tesoro-orange transition-colors [clip-path:polygon(8px_0%,calc(100%-8px)_0%,calc(100%-8px)_25%,100%_25%,100%_75%,calc(100%-8px)_75%,calc(100%-8px)_100%,8px_100%,8px_75%,0%_75%,0%_25%,8px_25%)]"
+              >Projets</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="block px-4 py-2 bg-white/40 text-black hover:bg-tesoro-orange transition-colors [clip-path:polygon(8px_0%,calc(100%-8px)_0%,calc(100%-8px)_25%,100%_25%,100%_75%,calc(100%-8px)_75%,calc(100%-8px)_100%,8px_100%,8px_75%,0%_75%,0%_25%,8px_25%)]"
+              >Contact</a
+            >
+          </li>
+        </ul>
+
+        <!-- Liens Externes & CV -->
+        <div class="flex items-center gap-5 border-l-2 border-black/20 pl-8">
+          <!-- LinkedIn -->
+          <a
+            href="https://www.linkedin.com/in/salem-kongolo-32ba57290/"
+            target="_blank"
+            class="text-black hover:text-tesoro-orange hover:-translate-y-1 transition-all"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+              />
+            </svg>
+          </a>
+          <!-- Télécharger CV -->
+          <a
+            href="CV_KADEA.pdf"
+            download
+            class="bg-black text-tesoro-mint font-black text-xs md:text-sm uppercase tracking-widest px-6 py-2.5 rounded-full border-2 border-black hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#ff9033] transition-all"
+          >
+            Télécharger CV
+          </a>
         </div>
-        <div class="hidden md:flex items-center gap-8">
-            <!-- Menu Classique -->
-            <ul class="flex gap-4 items-center font-bold text-sm uppercase tracking-wide">
-                <li><a href="#cv" class="block px-4 py-2 bg-white/40 text-black hover:bg-tesoro-orange transition-colors [clip-path:polygon(8px_0%,calc(100%-8px)_0%,calc(100%-8px)_25%,100%_25%,100%_75%,calc(100%-8px)_75%,calc(100%-8px)_100%,8px_100%,8px_75%,0%_75%,0%_25%,8px_25%)]">CV</a></li>
-                <li><a href="#projets" class="block px-4 py-2 bg-white/40 text-black hover:bg-tesoro-orange transition-colors [clip-path:polygon(8px_0%,calc(100%-8px)_0%,calc(100%-8px)_25%,100%_25%,100%_75%,calc(100%-8px)_75%,calc(100%-8px)_100%,8px_100%,8px_75%,0%_75%,0%_25%,8px_25%)]">Projets</a></li>
-                <li><a href="#contact" class="block px-4 py-2 bg-white/40 text-black hover:bg-tesoro-orange transition-colors [clip-path:polygon(8px_0%,calc(100%-8px)_0%,calc(100%-8px)_25%,100%_25%,100%_75%,calc(100%-8px)_75%,calc(100%-8px)_100%,8px_100%,8px_75%,0%_75%,0%_25%,8px_25%)]">Contact</a></li>
-            </ul>
-            
-            <!-- Liens Externes & CV -->
-            <div class="flex items-center gap-5 border-l-2 border-black/20 pl-8">
-                <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/salem-kongolo-32ba57290/" target="_blank" class="text-black hover:text-tesoro-orange hover:-translate-y-1 transition-all">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                </a>
-                <!-- Télécharger CV -->
-                <a href="CV_KADEA.pdf" download class="bg-black text-tesoro-mint font-black text-xs md:text-sm uppercase tracking-widest px-6 py-2.5 rounded-full border-2 border-black hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#ff9033] transition-all">
-                    Télécharger CV
-                </a>
-            </div>
+      </div>
+      <button
+        id="mobile-menu-button"
+        type="button"
+        class="md:hidden w-11 h-11 rounded-full bg-black text-white border-2 border-black flex items-center justify-center shadow-[3px_3px_0px_0px_#ff9033] transition-transform active:scale-95"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+        aria-label="Ouvrir le menu"
+      >
+        <img class="w-5 invert" src="images/menu.svg" alt="" />
+      </button>
+      <nav
+        id="mobile-menu"
+        class="hidden md:hidden absolute top-full left-4 right-4 mt-2 rounded-3xl border-4 border-black bg-white p-4 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
+      >
+        <ul class="flex flex-col gap-3 font-black uppercase tracking-wide">
+          <li>
+            <a
+              href="#cv"
+              class="mobile-menu-link block rounded-2xl bg-tesoro-mint px-5 py-4 border-2 border-black"
+              >CV</a
+            >
+          </li>
+          <li>
+            <a
+              href="#projets"
+              class="mobile-menu-link block rounded-2xl bg-tesoro-yellow px-5 py-4 border-2 border-black"
+              >Projets</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="mobile-menu-link block rounded-2xl bg-tesoro-orange px-5 py-4 border-2 border-black"
+              >Contact</a
+            >
+          </li>
+        </ul>
+        <div class="mt-4 grid grid-cols-2 gap-3">
+          <a
+            href="https://www.linkedin.com/in/salem-kongolo-32ba57290/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="rounded-2xl border-2 border-black px-4 py-3 text-center font-black"
+            >LinkedIn</a
+          >
+          <a
+            href="CV_KADEA.pdf"
+            download
+            class="rounded-2xl border-2 border-black bg-black px-4 py-3 text-center font-black text-tesoro-mint"
+            >CV PDF</a
+          >
         </div>
-        <button id="mobile-menu-button" type="button" class="md:hidden w-11 h-11 rounded-full bg-black text-white border-2 border-black flex items-center justify-center shadow-[3px_3px_0px_0px_#ff9033] transition-transform active:scale-95" aria-controls="mobile-menu" aria-expanded="false" aria-label="Ouvrir le menu">
-            <img class="w-5 invert" src="images/menu.svg" alt="">
-        </button>
-        <nav id="mobile-menu" class="hidden md:hidden absolute top-full left-4 right-4 mt-2 rounded-3xl border-4 border-black bg-white p-4 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-            <ul class="flex flex-col gap-3 font-black uppercase tracking-wide">
-                <li><a href="#cv" class="mobile-menu-link block rounded-2xl bg-tesoro-mint px-5 py-4 border-2 border-black">CV</a></li>
-                <li><a href="#projets" class="mobile-menu-link block rounded-2xl bg-tesoro-yellow px-5 py-4 border-2 border-black">Projets</a></li>
-                <li><a href="#contact" class="mobile-menu-link block rounded-2xl bg-tesoro-orange px-5 py-4 border-2 border-black">Contact</a></li>
-            </ul>
-            <div class="mt-4 grid grid-cols-2 gap-3">
-                <a href="https://www.linkedin.com/in/salem-kongolo-32ba57290/" target="_blank" rel="noopener noreferrer" class="rounded-2xl border-2 border-black px-4 py-3 text-center font-black">LinkedIn</a>
-                <a href="CV_KADEA.pdf" download class="rounded-2xl border-2 border-black bg-black px-4 py-3 text-center font-black text-tesoro-mint">CV PDF</a>
-            </div>
-        </nav>
+      </nav>
     </header>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const menuLinks = document.querySelectorAll('.mobile-menu-link');
+      document.addEventListener("DOMContentLoaded", () => {
+        const menuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const menuLinks = document.querySelectorAll(".mobile-menu-link");
 
-            if (!menuButton || !mobileMenu) return;
+        if (!menuButton || !mobileMenu) return;
 
-            const closeMenu = () => {
-                mobileMenu.classList.add('hidden');
-                menuButton.setAttribute('aria-expanded', 'false');
-                menuButton.setAttribute('aria-label', 'Ouvrir le menu');
-            };
+        const closeMenu = () => {
+          mobileMenu.classList.add("hidden");
+          menuButton.setAttribute("aria-expanded", "false");
+          menuButton.setAttribute("aria-label", "Ouvrir le menu");
+        };
 
-            menuButton.addEventListener('click', () => {
-                const isOpen = !mobileMenu.classList.contains('hidden');
-                mobileMenu.classList.toggle('hidden');
-                menuButton.setAttribute('aria-expanded', String(!isOpen));
-                menuButton.setAttribute('aria-label', isOpen ? 'Ouvrir le menu' : 'Fermer le menu');
-            });
-
-            menuLinks.forEach(link => link.addEventListener('click', closeMenu));
-
-            window.addEventListener('resize', () => {
-                if (window.innerWidth >= 768) closeMenu();
-            });
+        menuButton.addEventListener("click", () => {
+          const isOpen = !mobileMenu.classList.contains("hidden");
+          mobileMenu.classList.toggle("hidden");
+          menuButton.setAttribute("aria-expanded", String(!isOpen));
+          menuButton.setAttribute(
+            "aria-label",
+            isOpen ? "Ouvrir le menu" : "Fermer le menu",
+          );
         });
+
+        menuLinks.forEach((link) => link.addEventListener("click", closeMenu));
+
+        window.addEventListener("resize", () => {
+          if (window.innerWidth >= 768) closeMenu();
+        });
+      });
+
+      window.setupMobileReveal = (element) => {
+        if (!element) return;
+
+        element.classList.add("mobile-reveal-ready");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                element.classList.add("mobile-reveal-visible");
+                observer.unobserve(element);
+              }
+            });
+          },
+          { threshold: 0.15 },
+        );
+
+        observer.observe(element);
+      };
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const header = document.querySelector("header");
+        let lastScrollY = window.scrollY;
+
+        if (!header) return;
+
+        window.addEventListener(
+          "scroll",
+          () => {
+            const currentScrollY = window.scrollY;
+            const isScrollingDown = currentScrollY > lastScrollY;
+
+            if (currentScrollY > 90 && isScrollingDown) {
+              header.classList.add("-translate-y-full");
+            } else {
+              header.classList.remove("-translate-y-full");
+            }
+
+            lastScrollY = currentScrollY;
+          },
+          { passive: true },
+        );
+      });
     </script>
 
-    <div class="flex-grow">
-        <!-- HERO SECTION -->
-    <section id="home" data-bg="bg-tesoro-cora" class="w-full relative min-h-[90vh] flex flex-col md:flex-row items-center pt-24 md:pt-32 pb-16 overflow-hidden px-8 md:px-20">
-        <div class="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center gap-12 md:gap-20">
-            
-            <!-- IMAGE CERCLE (A gauche) -->
-            <div class="w-full md:w-[45%] flex justify-center md:justify-start mb-12 md:mb-0">
-                <div class="relative w-[60vw] h-[60vw] md:w-[20rem] md:h-[20rem] lg:w-[24rem] lg:h-[24rem]">
-                    <!-- Fond jaune décalé -->
-                    <div class="absolute inset-0 bg-tesoro-yellow rounded-full translate-x-4 translate-y-4 md:translate-x-6 md:translate-y-6"></div>
-                    <!-- Image principale avec bordure noire -->
-                    <img src="images/salem.jpg" class="absolute inset-0 w-full h-full object-cover rounded-full border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]" alt="mon image Salem">
-                </div>
-            </div>
+    <style>
+      html,
+      body {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
 
-            <!-- TEXTE (A droite) -->
-            <div class="w-full md:w-[55%] flex flex-col gap-8 relative z-10">
-                <div>
-                    <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-[6.5rem] font-black leading-[0.95] md:leading-[0.9] tracking-tighter mb-4 text-black">
-                        Tourner vos idées <span class="inline-flex items-center gap-2 bg-tesoro-yellow text-black text-base sm:text-xl md:text-3xl px-3 sm:px-5 py-2 rounded-full border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] -rotate-6 align-middle mx-1 sm:mx-2 font-bold uppercase tracking-widest hover:rotate-0 transition-transform">
-                            <span>✨</span> Créatives
-                        </span><br>en <span class="text-tesoro-orange">réalités.</span>
-                    </h1>
-                    <p class="text-xl md:text-2xl font-medium leading-relaxed text-black/80 mt-6 max-w-xl">
-                        Je suis <strong>Salem Kongolo</strong>, Ingénieur Full Stack &amp; IT Infrastructure. Je transforme des idées en solutions numériques robustes — du code au réseau.
-                    </p>
-                </div>
-                <!-- 3 Boutons 
+      @media (max-width: 767px) {
+        .mobile-reveal-ready {
+          opacity: 0;
+          transform: translateY(18px);
+          transition:
+            opacity 520ms ease,
+            transform 520ms ease;
+        }
+
+        .mobile-reveal-visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+
+    <div class="flex-grow">
+      <!-- HERO SECTION -->
+      <section
+        id="home"
+        data-bg="bg-tesoro-cora"
+        class="w-full relative min-h-[90vh] flex flex-col md:flex-row items-center pt-24 md:pt-32 pb-16 overflow-hidden px-8 md:px-20"
+      >
+        <div
+          class="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center gap-12 md:gap-20"
+        >
+          <!-- IMAGE CERCLE (A gauche) -->
+          <div
+            class="w-full md:w-[45%] flex justify-center md:justify-start mb-12 md:mb-0"
+          >
+            <div
+              class="relative w-[60vw] h-[60vw] md:w-[20rem] md:h-[20rem] lg:w-[24rem] lg:h-[24rem]"
+            >
+              <!-- Fond jaune décalé -->
+              <div
+                class="absolute inset-0 bg-tesoro-yellow rounded-full translate-x-4 translate-y-4 md:translate-x-6 md:translate-y-6"
+              ></div>
+              <!-- Image principale avec bordure noire -->
+              <img
+                src="images/salem.jpg"
+                class="absolute inset-0 w-full h-full object-cover rounded-full border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+                alt="mon image Salem"
+              />
+            </div>
+          </div>
+
+          <!-- TEXTE (A droite) -->
+          <div class="w-full md:w-[55%] flex flex-col gap-8 relative z-10">
+            <div>
+              <h1
+                class="text-5xl sm:text-6xl md:text-7xl lg:text-[6.5rem] font-black leading-[0.95] md:leading-[0.9] tracking-tighter mb-4 text-black"
+              >
+                Tourner vos idées
+                <span
+                  class="inline-flex items-center gap-2 bg-tesoro-yellow text-black text-base sm:text-xl md:text-3xl px-3 sm:px-5 py-2 rounded-full border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] -rotate-6 align-middle mx-1 sm:mx-2 font-bold uppercase tracking-widest hover:rotate-0 transition-transform"
+                >
+                  <span>✨</span> Créatives </span
+                ><br />en <span class="text-tesoro-orange">réalités.</span>
+              </h1>
+              <p
+                class="text-xl md:text-2xl text-justify font-medium leading-relaxed text-black/80 mt-6 max-w-xl"
+              >
+                Je suis <strong>Salem Kongolo</strong>, Devellopeur Full Stack
+                &amp; IT Infrastructure. Je transforme des idées en solutions
+                numériques robustes — du code au réseau.
+              </p>
+            </div>
+            <!-- 3 Boutons 
                 <div class="flex flex-wrap gap-4 mt-4">
                     <a href="#cv" class="px-8 py-4 bg-tesoro-orange text-black font-black text-xl rounded-[2rem] border-2 border-black hover:-translate-y-1 transition-all">
                         Mon CV
@@ -168,719 +343,1156 @@
                         Contact
                     </a>
                 </div>-->
+          </div>
+        </div>
+      </section>
+
+      <!-- CV SECTION -->
+      <!-- CV SECTION -->
+      <section
+        id="cv"
+        data-bg="bg-tesoro-sand"
+        class="w-full py-24 scroll-mt-24 overflow-hidden"
+      >
+        <div
+          class="cv-card max-w-4xl mx-auto px-8 md:px-20"
+          style="transform-origin: center top; will-change: transform, opacity"
+        >
+          <h1
+            class="text-5xl md:text-7xl font-black mb-16 text-black tracking-tighter"
+          >
+            Mon <span class="text-tesoro-orange">Parcours.</span>
+          </h1>
+
+          <div class="flex flex-col gap-12">
+            <!-- Experience -->
+            <div>
+              <h3 class="text-3xl font-black mb-6 flex items-center gap-4">
+                <div
+                  class="w-8 h-8 rounded-full bg-tesoro-orange border-2 border-black"
+                ></div>
+                Expérience Professionnelle
+              </h3>
+
+              <div
+                class="flex flex-col gap-6 pl-4 md:pl-12 border-l-4 border-black"
+              >
+                <!-- Data yard -->
+                <div
+                  class="bg-tesoro-cora rounded-3xl p-8 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transition-all"
+                >
+                  <div
+                    class="flex flex-col md:flex-row justify-between md:items-center mb-4 gap-2"
+                  >
+                    <h5 class="text-2xl font-black text-black">
+                      Technicien IT &amp; Réseau
+                    </h5>
+                    <span
+                      class="bg-black text-white px-4 py-1 rounded-full font-bold text-sm"
+                      >Avril 2025 – Déc. 2025</span
+                    >
+                  </div>
+                  <p class="font-bold text-gray-500 mb-4">
+                    Data yard — Kinshasa
+                  </p>
+                  <ul
+                    class="list-disc list-inside space-y-2 font-medium text-lg"
+                  >
+                    <li>Installation et configuration de réseaux</li>
+                    <li>Dépannage réseau et optimisation des performances</li>
+                    <li>
+                      Maintenance de l'infrastructure IT (CCTV, équipements
+                      réseau)
+                    </li>
+                    <li>Support technique et intégration de solutions IT</li>
+                  </ul>
+                </div>
+
+                <!-- CNSS -->
+                <div
+                  class="bg-tesoro-perso rounded-3xl p-8 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transition-all"
+                >
+                  <div
+                    class="flex flex-col md:flex-row justify-between md:items-center mb-4 gap-2"
+                  >
+                    <h5 class="text-2xl font-black">Stagiaire IT – CNSS</h5>
+                    <span
+                      class="bg-black text-white px-4 py-1 rounded-full font-bold text-sm"
+                      >Sept. 2023 – Déc. 2023</span
+                    >
+                  </div>
+                  <p class="font-bold text-gray-500 mb-4">
+                    Caisse Nationale de Sécurité Sociale — Kinshasa
+                  </p>
+                  <ul
+                    class="list-disc list-inside space-y-2 font-medium text-lg"
+                  >
+                    <li>
+                      Gestion et analyse des données pour un traitement efficace
+                    </li>
+                    <li>Préparation des rapports d'activités et d'analyses</li>
+                    <li>
+                      Proposition d'améliorations basées sur les résultats
+                      obtenus
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- PEV -->
+                <div
+                  class="bg-tesoro-moim rounded-3xl p-8 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transition-all"
+                >
+                  <div
+                    class="flex flex-col md:flex-row justify-between md:items-center mb-4 gap-2"
+                  >
+                    <h5 class="text-2xl font-black">Stagiaire IT – PEV</h5>
+                    <span
+                      class="bg-black text-white px-4 py-1 rounded-full font-bold text-sm"
+                      >Fév. 2023 – Mars 2023</span
+                    >
+                  </div>
+                  <p class="font-bold text-gray-500 mb-4">
+                    Programme Élargi de Vaccination — Kinshasa
+                  </p>
+                  <ul
+                    class="list-disc list-inside space-y-2 font-medium text-lg"
+                  >
+                    <li>Analyse de données et support à la décision</li>
+                    <li>
+                      Production de rapports et recommandations techniques
+                    </li>
+                    <li>
+                      Collaboration avec les équipes dans des environnements
+                      opérationnels
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
 
-        </div>
-    </section>
+            <!-- Formations -->
+            <div>
+              <h3 class="text-3xl font-black mb-6 flex items-center gap-4">
+                <div
+                  class="w-8 h-8 rounded-full bg-tesoro-yellow border-2 border-black"
+                ></div>
+                Diplômes &amp; Formations
+              </h3>
 
-    <!-- CV SECTION -->
-        <!-- CV SECTION -->
-    <section id="cv" data-bg="bg-tesoro-sand" class="w-full py-24 scroll-mt-24 overflow-hidden">
-        <div class="cv-card max-w-4xl mx-auto px-8 md:px-20" style="transform-origin: center top; will-change: transform, opacity;">
-            <h1 class="text-5xl md:text-7xl font-black mb-16 text-black tracking-tighter">Mon <span class="text-tesoro-orange">Parcours.</span></h1>
-
-            <div class="flex flex-col gap-12">
-                <!-- Experience -->
-                <div>
-                    <h3 class="text-3xl font-black mb-6 flex items-center gap-4">
-                        <div class="w-8 h-8 rounded-full bg-tesoro-orange border-2 border-black"></div>
-                        Expérience Professionnelle
-                    </h3>
-                    
-                    <div class="flex flex-col gap-6 pl-4 md:pl-12 border-l-4 border-black">
-
-                        <!-- Data yard -->
-                        <div class="bg-tesoro-cora rounded-3xl p-8 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transition-all">
-                            <div class="flex flex-col md:flex-row justify-between md:items-center mb-4 gap-2">
-                                <h5 class="text-2xl font-black text-black">Technicien IT &amp; Réseau</h5>
-                                <span class="bg-black text-white px-4 py-1 rounded-full font-bold text-sm">Avril 2025 – Déc. 2025</span>
-                            </div>
-                            <p class="font-bold text-gray-500 mb-4">Data yard — Kinshasa</p>
-                            <ul class="list-disc list-inside space-y-2 font-medium text-lg">
-                                <li>Installation et configuration de réseaux</li>
-                                <li>Dépannage réseau et optimisation des performances</li>
-                                <li>Maintenance de l'infrastructure IT (CCTV, équipements réseau)</li>
-                                <li>Support technique et intégration de solutions IT</li>
-                            </ul>
-                        </div>
-
-                        <!-- CNSS -->
-                        <div class="bg-tesoro-perso rounded-3xl p-8 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transition-all">
-                            <div class="flex flex-col md:flex-row justify-between md:items-center mb-4 gap-2">
-                                <h5 class="text-2xl font-black">Stagiaire IT – CNSS</h5>
-                                <span class="bg-black text-white px-4 py-1 rounded-full font-bold text-sm">Sept. 2023 – Déc. 2023</span>
-                            </div>
-                            <p class="font-bold text-gray-500 mb-4">Caisse Nationale de Sécurité Sociale — Kinshasa</p>
-                            <ul class="list-disc list-inside space-y-2 font-medium text-lg">
-                                <li>Gestion et analyse des données pour un traitement efficace</li>
-                                <li>Préparation des rapports d'activités et d'analyses</li>
-                                <li>Proposition d'améliorations basées sur les résultats obtenus</li>
-                            </ul>
-                        </div>
-
-                        <!-- PEV -->
-                        <div class="bg-tesoro-moim rounded-3xl p-8 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transition-all">
-                            <div class="flex flex-col md:flex-row justify-between md:items-center mb-4 gap-2">
-                                <h5 class="text-2xl font-black">Stagiaire IT – PEV</h5>
-                                <span class="bg-black text-white px-4 py-1 rounded-full font-bold text-sm">Fév. 2023 – Mars 2023</span>
-                            </div>
-                            <p class="font-bold text-gray-500 mb-4">Programme Élargi de Vaccination — Kinshasa</p>
-                            <ul class="list-disc list-inside space-y-2 font-medium text-lg">
-                                <li>Analyse de données et support à la décision</li>
-                                <li>Production de rapports et recommandations techniques</li>
-                                <li>Collaboration avec les équipes dans des environnements opérationnels</li>
-                            </ul>
-                        </div>
-
-                    </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pl-0 md:pl-12">
+                <div
+                  class="bg-white rounded-3xl p-6 border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]"
+                >
+                  <h5 class="text-xl font-black mb-2">
+                    🎓 Développement Web Full Stack
+                  </h5>
+                  <p class="text-tesoro-orange font-bold">
+                    Juin 2025 – Mars 2026
+                  </p>
+                  <p class="text-sm font-bold text-gray-500 mt-2">
+                    KADEA (Simplon) — Kinshasa
+                  </p>
                 </div>
-
-                <!-- Formations -->
-                <div>
-                    <h3 class="text-3xl font-black mb-6 flex items-center gap-4">
-                        <div class="w-8 h-8 rounded-full bg-tesoro-yellow border-2 border-black"></div>
-                        Diplômes &amp; Formations
-                    </h3>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pl-0 md:pl-12">
-                        <div class="bg-white rounded-3xl p-6 border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
-                            <h5 class="text-xl font-black mb-2">🎓 Développement Web Full Stack</h5>
-                            <p class="text-tesoro-orange font-bold">Juin 2025 – Mars 2026</p>
-                            <p class="text-sm font-bold text-gray-500 mt-2">KADEA (Simplon) — Kinshasa</p>
-                        </div>
-                        <div class="bg-white rounded-3xl p-6 border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
-                            <h5 class="text-xl font-black mb-2">🎓 Licence en Maths, Stats &amp; Informatique</h5>
-                            <p class="text-tesoro-orange font-bold">Fév. 2019 – Mars 2024</p>
-                            <p class="text-sm font-bold text-gray-500 mt-2">Université de Kinshasa (UNIKIN)</p>
-                        </div>
-                        <div class="bg-white rounded-3xl p-6 border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
-                            <h5 class="text-xl font-black mb-2">🎓 Certification CISCO IT Essentials</h5>
-                            <p class="text-tesoro-orange font-bold">Mars 2022 – Juin 2022</p>
-                            <p class="text-sm font-bold text-gray-500 mt-2">INPP — Kinshasa</p>
-                        </div>
-                    </div>
+                <div
+                  class="bg-white rounded-3xl p-6 border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]"
+                >
+                  <h5 class="text-xl font-black mb-2">
+                    🎓 Licence en Maths, Stats &amp; Informatique
+                  </h5>
+                  <p class="text-tesoro-orange font-bold">
+                    Fév. 2019 – Mars 2024
+                  </p>
+                  <p class="text-sm font-bold text-gray-500 mt-2">
+                    Université de Kinshasa (UNIKIN)
+                  </p>
                 </div>
-
-                <!-- Compétences -->
-                <div>
-                    <h3 class="text-3xl font-black mb-6 flex items-center gap-4">
-                        <div class="w-8 h-8 rounded-full bg-tesoro-dark border-2 border-black"></div>
-                        Compétences Techniques
-                    </h3>
-                    
-                    <div class="flex flex-col gap-6 pl-0 md:pl-12">
-                        <!-- Dev -->
-                        <div>
-                            <p class="font-black text-sm uppercase tracking-widest mb-3 text-gray-500">Software Development</p>
-                            <div class="flex flex-wrap gap-3">
-                                <span class="px-6 py-3 bg-white border-2 border-black rounded-full font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform">JavaScript / TypeScript</span>
-                                <span class="px-6 py-3 bg-tesoro-orange border-2 border-black rounded-full font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform">Node.js / AdonisJS</span>
-                                <span class="px-6 py-3 bg-white border-2 border-black rounded-full font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform">React.js / Next.js</span>
-                                <span class="px-6 py-3 bg-tesoro-yellow border-2 border-black rounded-full font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform">APIs REST</span>
-                                <span class="px-6 py-3 bg-white border-2 border-black rounded-full font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform">Tailwind CSS</span>
-                                <span class="px-6 py-3 bg-tesoro-dark text-white border-2 border-black rounded-full font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform">Git / GitHub</span>
-                            </div>
-                        </div>
-                        <!-- DB -->
-                        <div>
-                            <p class="font-black text-sm uppercase tracking-widest mb-3 text-gray-500">Administration de Bases de Données</p>
-                            <div class="flex flex-wrap gap-3">
-                                <span class="px-6 py-3 bg-white border-2 border-black rounded-full font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform">PostgreSQL</span>
-                                <span class="px-6 py-3 bg-tesoro-mint border-2 border-black rounded-full font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform">MySQL / SQL Server</span>
-                                <span class="px-6 py-3 bg-white border-2 border-black rounded-full font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform">Modélisation MCD/MLD</span>
-                                <span class="px-6 py-3 bg-tesoro-yellow border-2 border-black rounded-full font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform">Power BI / Excel</span>
-                            </div>
-                        </div>
-
-                    </div>
+                <div
+                  class="bg-white rounded-3xl p-6 border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]"
+                >
+                  <h5 class="text-xl font-black mb-2">
+                    🎓 Certification CISCO IT Essentials
+                  </h5>
+                  <p class="text-tesoro-orange font-bold">
+                    Mars 2022 – Juin 2022
+                  </p>
+                  <p class="text-sm font-bold text-gray-500 mt-2">
+                    INPP — Kinshasa
+                  </p>
                 </div>
+              </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Script pour l'animation au scroll -->
-    <style>
+            <!-- Compétences -->
+            <div>
+              <h3 class="text-3xl font-black mb-6 flex items-center gap-4">
+                <div
+                  class="w-8 h-8 rounded-full bg-tesoro-dark border-2 border-black"
+                ></div>
+                Compétences Techniques
+              </h3>
+
+              <div class="flex flex-col gap-6 pl-0 md:pl-12">
+                <!-- Dev -->
+                <div>
+                  <p
+                    class="font-black text-sm uppercase tracking-widest mb-3 text-gray-500"
+                  >
+                    Software Development
+                  </p>
+                  <div class="flex flex-wrap gap-3">
+                    <span
+                      class="px-6 py-3 bg-white border-2 border-black rounded-full font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform"
+                      >JavaScript / TypeScript</span
+                    >
+                    <span
+                      class="px-6 py-3 bg-tesoro-orange border-2 border-black rounded-full font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform"
+                      >Node.js / AdonisJS</span
+                    >
+                    <span
+                      class="px-6 py-3 bg-white border-2 border-black rounded-full font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform"
+                      >React.js / Next.js</span
+                    >
+                    <span
+                      class="px-6 py-3 bg-tesoro-yellow border-2 border-black rounded-full font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform"
+                      >APIs REST</span
+                    >
+                    <span
+                      class="px-6 py-3 bg-white border-2 border-black rounded-full font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform"
+                      >Tailwind CSS</span
+                    >
+                    <span
+                      class="px-6 py-3 bg-tesoro-dark text-white border-2 border-black rounded-full font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform"
+                      >Git / GitHub</span
+                    >
+                  </div>
+                </div>
+                <!-- DB -->
+                <div>
+                  <p
+                    class="font-black text-sm uppercase tracking-widest mb-3 text-gray-500"
+                  >
+                    Administration de Bases de Données
+                  </p>
+                  <div class="flex flex-wrap gap-3">
+                    <span
+                      class="px-6 py-3 bg-white border-2 border-black rounded-full font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform"
+                      >PostgreSQL</span
+                    >
+                    <span
+                      class="px-6 py-3 bg-tesoro-mint border-2 border-black rounded-full font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform"
+                      >MySQL / SQL Server</span
+                    >
+                    <span
+                      class="px-6 py-3 bg-white border-2 border-black rounded-full font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform"
+                      >Modélisation MCD/MLD</span
+                    >
+                    <span
+                      class="px-6 py-3 bg-tesoro-yellow border-2 border-black rounded-full font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform"
+                      >Power BI / Excel</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Script pour l'animation au scroll -->
+      <style>
         @media (max-width: 767px) {
-            #cv {
-                padding-top: 4rem;
-                padding-bottom: 4rem;
-            }
+          #cv {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+          }
 
-            #cv .cv-card {
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
+          #cv .cv-card {
+            padding-left: 1rem;
+            padding-right: 1rem;
+          }
 
-            #cv .cv-card > h1 {
-                margin-bottom: 2rem;
-                font-size: 2.6rem;
-                line-height: 1;
-            }
+          #cv .cv-card > h1 {
+            margin-bottom: 2rem;
+            font-size: 2.6rem;
+            line-height: 1;
+          }
 
-            #cv .cv-card > div {
-                gap: 2rem;
-            }
+          #cv .cv-card > div {
+            gap: 2rem;
+          }
 
-            #cv h3 {
-                align-items: flex-start;
-                gap: 0.75rem;
-                margin-bottom: 1rem;
-                font-size: 1.55rem;
-                line-height: 1.1;
-            }
+          #cv h3 {
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            font-size: 1.55rem;
+            line-height: 1.1;
+          }
 
-            #cv h3 > div {
-                width: 1.25rem;
-                height: 1.25rem;
-                flex: 0 0 auto;
-                margin-top: 0.2rem;
-            }
+          #cv h3 > div {
+            width: 1.25rem;
+            height: 1.25rem;
+            flex: 0 0 auto;
+            margin-top: 0.2rem;
+          }
 
-            #cv h5 {
-                font-size: 1.25rem;
-                line-height: 1.15;
-            }
+          #cv h5 {
+            font-size: 1.25rem;
+            line-height: 1.15;
+          }
 
-            #cv .border-l-4 {
-                padding-left: 0.75rem;
-                border-left-width: 3px;
-            }
+          #cv .border-l-4 {
+            padding-left: 0.75rem;
+            border-left-width: 3px;
+          }
 
-            #cv .border-l-4 > div,
-            #cv .grid > div {
-                border-width: 3px;
-                border-radius: 1.25rem;
-                padding: 1rem;
-                box-shadow: 5px 5px 0 rgba(0, 0, 0, 1);
-            }
+          #cv .border-l-4 > div,
+          #cv .grid > div {
+            border-width: 3px;
+            border-radius: 1.25rem;
+            padding: 1rem;
+            box-shadow: 5px 5px 0 rgba(0, 0, 0, 1);
+          }
 
-            #cv .border-l-4 > div:hover {
-                transform: none;
-                box-shadow: 5px 5px 0 rgba(0, 0, 0, 1);
-            }
+          #cv .border-l-4 > div:hover {
+            transform: none;
+            box-shadow: 5px 5px 0 rgba(0, 0, 0, 1);
+          }
 
-            #cv ul {
-                font-size: 0.98rem;
-                line-height: 1.45;
-            }
+          #cv ul {
+            font-size: 0.98rem;
+            line-height: 1.45;
+          }
 
-            #cv li {
-                list-style-position: outside;
-                margin-left: 1rem;
-            }
+          #cv li {
+            list-style-position: outside;
+            margin-left: 1rem;
+          }
 
-            #cv span {
-                width: fit-content;
-                max-width: 100%;
-                border-radius: 999px;
-                white-space: normal;
-                line-height: 1.2;
-            }
+          #cv span {
+            width: fit-content;
+            max-width: 100%;
+            border-radius: 999px;
+            white-space: normal;
+            line-height: 1.2;
+          }
 
-            #cv .flex-wrap span {
-                padding: 0.65rem 0.9rem;
-                font-size: 0.9rem;
-                box-shadow: 3px 3px 0 rgba(0, 0, 0, 1);
-            }
+          #cv .flex-wrap span {
+            padding: 0.65rem 0.9rem;
+            font-size: 0.9rem;
+            box-shadow: 3px 3px 0 rgba(0, 0, 0, 1);
+          }
         }
-    </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const section = document.getElementById('cv');
-            const card = section.querySelector('.cv-card');
-            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            const isMobile = window.matchMedia('(max-width: 767px)').matches;
+      </style>
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const section = document.getElementById("cv");
+          const card = section.querySelector(".cv-card");
+          const reducedMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)",
+          ).matches;
+          const isMobile = window.matchMedia("(max-width: 767px)").matches;
 
-            if (isMobile || reducedMotion) {
-                card.style.transform = 'scale(1)';
-                card.style.opacity = '1';
-                return;
-            }
-            
-            card.style.transform = 'scale(0.5)';
-            card.style.opacity = '0';
+          if (isMobile && !reducedMotion) {
+            window.setupMobileReveal(card);
+            return;
+          }
 
-            window.addEventListener('scroll', () => {
-                const rect = section.getBoundingClientRect();
-                const windowHeight = window.innerHeight;
-                
-                const startPos = windowHeight; 
-                const endPos = windowHeight * 0.2; 
-                
-                let progress = (startPos - rect.top) / (startPos - endPos);
-                progress = Math.max(0, Math.min(1, progress));
-                
-                const scale = 0.5 + (0.5 * progress);
-                const opacity = progress;
-                
-                card.style.transform = `scale(${scale})`;
-                card.style.opacity = opacity;
-            }, { passive: true });
-            
-            window.dispatchEvent(new Event('scroll'));
+          if (reducedMotion) {
+            card.style.transform = "scale(1)";
+            card.style.opacity = "1";
+            return;
+          }
+
+          card.style.transform = "scale(0.5)";
+          card.style.opacity = "0";
+
+          window.addEventListener(
+            "scroll",
+            () => {
+              const rect = section.getBoundingClientRect();
+              const windowHeight = window.innerHeight;
+
+              const startPos = windowHeight;
+              const endPos = windowHeight * 0.2;
+
+              let progress = (startPos - rect.top) / (startPos - endPos);
+              progress = Math.max(0, Math.min(1, progress));
+
+              const scale = 0.5 + 0.5 * progress;
+              const opacity = progress;
+
+              card.style.transform = `scale(${scale})`;
+              card.style.opacity = opacity;
+            },
+            { passive: true },
+          );
+
+          window.dispatchEvent(new Event("scroll"));
         });
-    </script>
+      </script>
 
+      <!-- PROJETS SECTION -->
+      <!-- PROJETS SECTION -->
+      <section
+        id="projets"
+        data-bg="bg-tesoro-coral"
+        class="max-w-6xl mx-auto px-4 sm:px-6 md:px-20 py-16 md:py-24 scroll-mt-24"
+      >
+        <div
+          class="projets-card bg-tesoro-perso rounded-[3rem] p-10 md:p-20 text-white shadow-2xl border-4 border-black"
+          style="transform-origin: center top; will-change: transform, opacity"
+        >
+          <h1
+            class="text-5xl md:text-7xl font-black mb-16 text-center text-black"
+          >
+            Tout mon portfolio en<br /><span class="text-tesoro-orange"
+              >Une seule page.</span
+            >
+          </h1>
 
-    <!-- PROJETS SECTION -->
-        <!-- PROJETS SECTION -->
-    <section id="projets" data-bg="bg-tesoro-coral" class="max-w-6xl mx-auto px-4 sm:px-6 md:px-20 py-16 md:py-24 scroll-mt-24">
-        <div class="projets-card bg-tesoro-perso rounded-[3rem] p-10 md:p-20 text-white shadow-2xl border-4 border-black" style="transform-origin: center top; will-change: transform, opacity;">
-            <h1 class="text-5xl md:text-7xl font-black mb-16 text-center text-black">Tout mon portfolio en<br><span class="text-tesoro-orange">Une seule page.</span></h1>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-
-                <!-- Projet 1 - Dr Norman -->
-                <div class="group bg-tesoro-card rounded-[2rem] p-8 border-2 border-transparent hover:border-tesoro-orange transition-all hover:-translate-y-2 flex flex-col gap-6">
-                    <div class="rounded-xl overflow-hidden border-2 border-black">
-                        <img src="images/dr.Norman.png" alt="Dr Norman" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="flex flex-col gap-3 flex-1">
-                        <h4 class="text-3xl font-black text-tesoro-orange">Dr Norman</h4>
-                        <p class="text-gray-400 font-medium leading-relaxed flex-1">Mon tout premier projet web — création d'un site dédié au Dr Norman. Ce projet m'a permis de découvrir les bases du HTML et du CSS tout en travaillant sur la structuration.</p>
-                        <div class="flex gap-3 mt-2">
-                            <span class="inline-flex items-center gap-2 px-4 py-2 bg-gray-700 text-gray-400 rounded-full text-sm font-bold cursor-default">Bientôt en ligne</span>
-                        </div>
-                    </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- Projet 1 - Dr Norman -->
+            <div
+              class="group bg-tesoro-card rounded-[2rem] p-8 border-2 border-transparent hover:border-tesoro-orange transition-all hover:-translate-y-2 flex flex-col gap-6"
+            >
+              <div class="rounded-xl overflow-hidden border-2 border-black">
+                <img
+                  src="images/dr.Norman.png"
+                  alt="Dr Norman"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="flex flex-col gap-3 flex-1">
+                <h4 class="text-3xl font-black text-tesoro-orange">
+                  Dr Norman
+                </h4>
+                <p class="text-gray-400 font-medium leading-relaxed flex-1">
+                  Mon tout premier projet web — création d'un site dédié au Dr
+                  Norman. Ce projet m'a permis de découvrir les bases du HTML et
+                  du CSS tout en travaillant sur la structuration.
+                </p>
+                <div class="flex gap-3 mt-2">
+                  <span
+                    class="inline-flex items-center gap-2 px-4 py-2 bg-gray-700 text-gray-400 rounded-full text-sm font-bold cursor-default"
+                    >Bientôt en ligne</span
+                  >
                 </div>
-
-                <!-- Projet 2 - Sunnyside (Netlify) -->
-                <a href="https://gilded-puppy-468bbe.netlify.app/" target="_blank" rel="noopener noreferrer" class="group bg-tesoro-card rounded-[2rem] p-8 border-2 border-transparent hover:border-tesoro-yellow transition-all hover:-translate-y-2 flex flex-col gap-6 cursor-pointer">
-                    <div class="rounded-xl overflow-hidden border-2 border-black">
-                        <img src="images/opera_img.png" alt="Sunnyside" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="flex flex-col gap-3 flex-1">
-                        <h4 class="text-3xl font-black text-tesoro-yellow">Sunnyside</h4>
-                        <p class="text-gray-400 font-medium leading-relaxed flex-1">Site vitrine moderne réalisé pour une agence créative. Mise en pratique du HTML et CSS avec un design responsive soigné.</p>
-                        <div class="flex gap-3 mt-2">
-                            <span class="inline-flex items-center gap-2 px-4 py-2 bg-tesoro-yellow text-black rounded-full text-sm font-black group-hover:bg-white transition-colors">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                                Voir le site
-                            </span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Projet 3 - Pet Store -->
-                <div class="group bg-tesoro-card rounded-[2rem] p-8 border-2 border-transparent hover:border-tesoro-mint transition-all hover:-translate-y-2 flex flex-col gap-6">
-                    <div class="rounded-xl overflow-hidden border-2 border-black">
-                        <img src="images/challenge2.png" alt="Pet Store" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="flex flex-col gap-3 flex-1">
-                        <h4 class="text-3xl font-black text-tesoro-mint">Pet Store &amp; Beyond</h4>
-                        <p class="text-gray-400 font-medium leading-relaxed flex-1">Site e-commerce fictif dédié aux animaux. Intégration HTML/CSS avec un design responsive.</p>
-                        <div class="flex gap-3 mt-2">
-                            <span class="inline-flex items-center gap-2 px-4 py-2 bg-gray-700 text-gray-400 rounded-full text-sm font-bold cursor-default">Bientôt en ligne</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Projet 4 - Reelup Shopify -->
-                <div class="group bg-tesoro-card rounded-[2rem] p-8 border-2 border-transparent hover:border-white transition-all hover:-translate-y-2 flex flex-col gap-6">
-                    <div class="rounded-xl overflow-hidden border-2 border-black">
-                        <img src="images/challenge2-1.png" alt="Reelup Shopify" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="flex flex-col gap-3 flex-1">
-                        <h4 class="text-3xl font-black text-white">Reelup sur Shopify</h4>
-                        <p class="text-gray-400 font-medium leading-relaxed flex-1">Personnalisation d'interface Shopify avec CSS avancé et media queries pour un rendu responsive.</p>
-                        <div class="flex gap-3 mt-2">
-                            <span class="inline-flex items-center gap-2 px-4 py-2 bg-gray-700 text-gray-400 rounded-full text-sm font-bold cursor-default">Bientôt en ligne</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Projet 5 - Boot camp -->
-                <div class="group bg-tesoro-card rounded-[2rem] p-8 border-2 border-transparent hover:border-tesoro-orange transition-all hover:-translate-y-2 flex flex-col gap-6">
-                    <div class="rounded-xl overflow-hidden border-2 border-black">
-                        <img src="images/boot_camp.png" alt="Boot camp" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="flex flex-col gap-3 flex-1">
-                        <h4 class="text-3xl font-black text-tesoro-orange">Boot camp</h4>
-                        <p class="text-gray-400 font-medium leading-relaxed flex-1">Landing page conçue sur Figma — mise en page, design visuel et ergonomie, avec un focus sur l'expérience utilisateur.</p>
-                        <div class="flex gap-3 mt-2">
-                            <span class="inline-flex items-center gap-2 px-4 py-2 bg-gray-700 text-gray-400 rounded-full text-sm font-bold cursor-default">Bientôt en ligne</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Projet 6 - Landing Page Netflix (Figma) -->
-                <a href="https://www.figma.com/design/JA72KILusHGxeHJpZOQmEB/neflix-figma?node-id=0-1&t=hlv6risvCffCkcpo-1" target="_blank" rel="noopener noreferrer" class="group bg-tesoro-card rounded-[2rem] p-8 border-2 border-transparent hover:border-tesoro-yellow transition-all hover:-translate-y-2 flex flex-col gap-6 cursor-pointer">
-                    <div class="rounded-xl overflow-hidden border-2 border-black">
-                        <img src="images/figma_netflix.png" alt="Netflix Landing Page" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="flex flex-col gap-3 flex-1">
-                        <h4 class="text-3xl font-black text-tesoro-yellow">Landing Page Netflix</h4>
-                        <p class="text-gray-400 font-medium leading-relaxed flex-1">Design Figma d'une landing page Netflix — mise en page, hiérarchie visuelle et prototypage interactif.</p>
-                        <div class="flex gap-3 mt-2">
-                            <span class="inline-flex items-center gap-2 px-4 py-2 bg-tesoro-yellow text-black rounded-full text-sm font-black group-hover:bg-white transition-colors">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                                Voir sur Figma
-                            </span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Projet 7 - Clone de X (Netlify) -->
-                <a href="https://radiant-rabanadas-499275.netlify.app/" target="_blank" rel="noopener noreferrer" class="group bg-tesoro-card rounded-[2rem] p-8 border-2 border-transparent hover:border-tesoro-mint transition-all hover:-translate-y-2 flex flex-col gap-6 cursor-pointer">
-                    <div class="rounded-xl overflow-hidden border-2 border-black">
-                        <img src="images/clone X.png" alt="Clone de X" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="flex flex-col gap-3 flex-1">
-                        <h4 class="text-3xl font-black text-tesoro-mint">Clone de X (Twitter)</h4>
-                        <p class="text-gray-400 font-medium leading-relaxed flex-1">Reproduction fidèle de l'interface de X (anciennement Twitter). Travail sur la structure, le responsive et la fidélité au design original.</p>
-                        <div class="flex gap-3 mt-2">
-                            <span class="inline-flex items-center gap-2 px-4 py-2 bg-tesoro-mint text-black rounded-full text-sm font-black group-hover:bg-white transition-colors">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                                Voir le site
-                            </span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Projet 8 - KleenCar -->
-                <a href="https://my-projet1-xsl6.vercel.app/" target="_blank" rel="noopener noreferrer" class="group bg-tesoro-card rounded-[2rem] p-8 border-2 border-transparent hover:border-tesoro-orange transition-all hover:-translate-y-2 flex flex-col gap-6 cursor-pointer">
-                    <div class="rounded-xl overflow-hidden border-2 border-black">
-                        <img src="images/kleeencar.png" alt="KleenCar" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="flex flex-col gap-3 flex-1">
-                        <h4 class="text-3xl font-black text-tesoro-orange">KleenCar</h4>
-                        <p class="text-gray-400 font-medium leading-relaxed flex-1">Expérience web immersive pour une marque de nettoyage automobile premium. 
-    Travail sur le design moderne, les interactions visuelles et l'optimisation responsive 
-    afin d'offrir une navigation fluide sur tous les appareils.</p>
-                        <div class="flex gap-3 mt-2">
-                            <span class="inline-flex items-center gap-2 px-4 py-2 bg-tesoro-orange text-black rounded-full text-sm font-black group-hover:bg-white transition-colors">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                                Voir le site
-                            </span>
-                        </div>
-                    </div>
-                </a>
-
+              </div>
             </div>
+
+            <!-- Projet 2 - Sunnyside (Netlify) -->
+            <a
+              href="https://gilded-puppy-468bbe.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group bg-tesoro-card rounded-[2rem] p-8 border-2 border-transparent hover:border-tesoro-yellow transition-all hover:-translate-y-2 flex flex-col gap-6 cursor-pointer"
+            >
+              <div class="rounded-xl overflow-hidden border-2 border-black">
+                <img
+                  src="images/opera_img.png"
+                  alt="Sunnyside"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="flex flex-col gap-3 flex-1">
+                <h4 class="text-3xl font-black text-tesoro-yellow">
+                  Sunnyside
+                </h4>
+                <p class="text-gray-400 font-medium leading-relaxed flex-1">
+                  Site vitrine moderne réalisé pour une agence créative. Mise en
+                  pratique du HTML et CSS avec un design responsive soigné.
+                </p>
+                <div class="flex gap-3 mt-2">
+                  <span
+                    class="inline-flex items-center gap-2 px-4 py-2 bg-tesoro-yellow text-black rounded-full text-sm font-black group-hover:bg-white transition-colors"
+                  >
+                    <svg
+                      class="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                    Voir le site
+                  </span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Projet 3 - Pet Store -->
+            <div
+              class="group bg-tesoro-card rounded-[2rem] p-8 border-2 border-transparent hover:border-tesoro-mint transition-all hover:-translate-y-2 flex flex-col gap-6"
+            >
+              <div class="rounded-xl overflow-hidden border-2 border-black">
+                <img
+                  src="images/challenge2.png"
+                  alt="Pet Store"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="flex flex-col gap-3 flex-1">
+                <h4 class="text-3xl font-black text-tesoro-mint">
+                  Pet Store &amp; Beyond
+                </h4>
+                <p class="text-gray-400 font-medium leading-relaxed flex-1">
+                  Site e-commerce fictif dédié aux animaux. Intégration HTML/CSS
+                  avec un design responsive.
+                </p>
+                <div class="flex gap-3 mt-2">
+                  <span
+                    class="inline-flex items-center gap-2 px-4 py-2 bg-gray-700 text-gray-400 rounded-full text-sm font-bold cursor-default"
+                    >Bientôt en ligne</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Projet 4 - Reelup Shopify -->
+            <div
+              class="group bg-tesoro-card rounded-[2rem] p-8 border-2 border-transparent hover:border-white transition-all hover:-translate-y-2 flex flex-col gap-6"
+            >
+              <div class="rounded-xl overflow-hidden border-2 border-black">
+                <img
+                  src="images/challenge2-1.png"
+                  alt="Reelup Shopify"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="flex flex-col gap-3 flex-1">
+                <h4 class="text-3xl font-black text-white">
+                  Reelup sur Shopify
+                </h4>
+                <p class="text-gray-400 font-medium leading-relaxed flex-1">
+                  Personnalisation d'interface Shopify avec CSS avancé et media
+                  queries pour un rendu responsive.
+                </p>
+                <div class="flex gap-3 mt-2">
+                  <span
+                    class="inline-flex items-center gap-2 px-4 py-2 bg-gray-700 text-gray-400 rounded-full text-sm font-bold cursor-default"
+                    >Bientôt en ligne</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Projet 5 - Boot camp -->
+            <div
+              class="group bg-tesoro-card rounded-[2rem] p-8 border-2 border-transparent hover:border-tesoro-orange transition-all hover:-translate-y-2 flex flex-col gap-6"
+            >
+              <div class="rounded-xl overflow-hidden border-2 border-black">
+                <img
+                  src="images/boot_camp.png"
+                  alt="Boot camp"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="flex flex-col gap-3 flex-1">
+                <h4 class="text-3xl font-black text-tesoro-orange">
+                  Boot camp
+                </h4>
+                <p class="text-gray-400 font-medium leading-relaxed flex-1">
+                  Landing page conçue sur Figma — mise en page, design visuel et
+                  ergonomie, avec un focus sur l'expérience utilisateur.
+                </p>
+                <div class="flex gap-3 mt-2">
+                  <span
+                    class="inline-flex items-center gap-2 px-4 py-2 bg-gray-700 text-gray-400 rounded-full text-sm font-bold cursor-default"
+                    >Bientôt en ligne</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Projet 6 - Landing Page Netflix (Figma) -->
+            <a
+              href="https://www.figma.com/design/JA72KILusHGxeHJpZOQmEB/neflix-figma?node-id=0-1&t=hlv6risvCffCkcpo-1"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group bg-tesoro-card rounded-[2rem] p-8 border-2 border-transparent hover:border-tesoro-yellow transition-all hover:-translate-y-2 flex flex-col gap-6 cursor-pointer"
+            >
+              <div class="rounded-xl overflow-hidden border-2 border-black">
+                <img
+                  src="images/figma_netflix.png"
+                  alt="Netflix Landing Page"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="flex flex-col gap-3 flex-1">
+                <h4 class="text-3xl font-black text-tesoro-yellow">
+                  Landing Page Netflix
+                </h4>
+                <p class="text-gray-400 font-medium leading-relaxed flex-1">
+                  Design Figma d'une landing page Netflix — mise en page,
+                  hiérarchie visuelle et prototypage interactif.
+                </p>
+                <div class="flex gap-3 mt-2">
+                  <span
+                    class="inline-flex items-center gap-2 px-4 py-2 bg-tesoro-yellow text-black rounded-full text-sm font-black group-hover:bg-white transition-colors"
+                  >
+                    <svg
+                      class="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                    Voir sur Figma
+                  </span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Projet 7 - Clone de X (Netlify) -->
+            <a
+              href="https://radiant-rabanadas-499275.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group bg-tesoro-card rounded-[2rem] p-8 border-2 border-transparent hover:border-tesoro-mint transition-all hover:-translate-y-2 flex flex-col gap-6 cursor-pointer"
+            >
+              <div class="rounded-xl overflow-hidden border-2 border-black">
+                <img
+                  src="images/clone X.png"
+                  alt="Clone de X"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="flex flex-col gap-3 flex-1">
+                <h4 class="text-3xl font-black text-tesoro-mint">
+                  Clone de X (Twitter)
+                </h4>
+                <p class="text-gray-400 font-medium leading-relaxed flex-1">
+                  Reproduction fidèle de l'interface de X (anciennement
+                  Twitter). Travail sur la structure, le responsive et la
+                  fidélité au design original.
+                </p>
+                <div class="flex gap-3 mt-2">
+                  <span
+                    class="inline-flex items-center gap-2 px-4 py-2 bg-tesoro-mint text-black rounded-full text-sm font-black group-hover:bg-white transition-colors"
+                  >
+                    <svg
+                      class="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                    Voir le site
+                  </span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Projet 8 - KleenCar -->
+            <a
+              href="https://my-projet1-xsl6.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group bg-tesoro-card rounded-[2rem] p-8 border-2 border-transparent hover:border-tesoro-orange transition-all hover:-translate-y-2 flex flex-col gap-6 cursor-pointer"
+            >
+              <div class="rounded-xl overflow-hidden border-2 border-black">
+                <img
+                  src="images/kleeencar.png"
+                  alt="KleenCar"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="flex flex-col gap-3 flex-1">
+                <h4 class="text-3xl font-black text-tesoro-orange">KleenCar</h4>
+                <p class="text-gray-400 font-medium leading-relaxed flex-1">
+                  Expérience web immersive pour une marque de nettoyage
+                  automobile premium. Travail sur le design moderne, les
+                  interactions visuelles et l'optimisation responsive afin
+                  d'offrir une navigation fluide sur tous les appareils.
+                </p>
+                <div class="flex gap-3 mt-2">
+                  <span
+                    class="inline-flex items-center gap-2 px-4 py-2 bg-tesoro-orange text-black rounded-full text-sm font-black group-hover:bg-white transition-colors"
+                  >
+                    <svg
+                      class="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                    Voir le site
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Script pour l'animation au scroll -->
-    <style>
+      <!-- Script pour l'animation au scroll -->
+      <style>
         @media (max-width: 767px) {
-            #projets .projets-card {
-                border-width: 3px;
-                border-radius: 1.5rem;
-                padding: 1rem;
-                box-shadow: 6px 6px 0 rgba(0, 0, 0, 1);
-            }
+          #projets .projets-card {
+            border-width: 3px;
+            border-radius: 1.5rem;
+            padding: 1rem;
+            box-shadow: 6px 6px 0 rgba(0, 0, 0, 1);
+          }
 
-            #projets .projets-card > h1 {
-                margin-bottom: 1.5rem;
-                font-size: 2.25rem;
-                line-height: 1;
-            }
+          #projets .projets-card > h1 {
+            margin-bottom: 1.5rem;
+            font-size: 2.25rem;
+            line-height: 1;
+          }
 
-            #projets .projets-card > div {
-                gap: 1rem;
-            }
+          #projets .projets-card > div {
+            gap: 1rem;
+          }
 
-            #projets .group {
-                gap: 1rem;
-                border-radius: 1.25rem;
-                padding: 1rem;
-            }
+          #projets .group {
+            gap: 1rem;
+            border-radius: 1.25rem;
+            padding: 1rem;
+          }
 
-            #projets .group:hover {
-                transform: none;
-            }
+          #projets .group:hover {
+            transform: none;
+          }
 
-            #projets img {
-                height: 9.5rem;
-            }
+          #projets img {
+            height: 9.5rem;
+          }
 
-            #projets h4 {
-                font-size: 1.45rem;
-                line-height: 1.05;
-            }
+          #projets h4 {
+            font-size: 1.45rem;
+            line-height: 1.05;
+          }
 
-            #projets p {
-                font-size: 0.95rem;
-                line-height: 1.45;
-            }
+          #projets p {
+            font-size: 0.95rem;
+            line-height: 1.45;
+          }
 
-            #projets span {
-                max-width: 100%;
-                justify-content: center;
-                text-align: center;
-            }
+          #projets span {
+            max-width: 100%;
+            justify-content: center;
+            text-align: center;
+          }
         }
-    </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const section = document.getElementById('projets');
-            const card = section.querySelector('.projets-card');
-            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            const isMobile = window.matchMedia('(max-width: 767px)').matches;
+      </style>
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const section = document.getElementById("projets");
+          const card = section.querySelector(".projets-card");
+          const reducedMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)",
+          ).matches;
+          const isMobile = window.matchMedia("(max-width: 767px)").matches;
 
-            if (isMobile || reducedMotion) {
-                card.style.transform = 'scale(1)';
-                card.style.opacity = '1';
-                return;
-            }
-            
-            card.style.transform = 'scale(0.5)';
-            card.style.opacity = '0';
+          if (isMobile && !reducedMotion) {
+            window.setupMobileReveal(card);
+            return;
+          }
 
-            window.addEventListener('scroll', () => {
-                const rect = section.getBoundingClientRect();
-                const windowHeight = window.innerHeight;
-                
-                const startPos = windowHeight; 
-                const endPos = windowHeight * 0.2; 
-                
-                let progress = (startPos - rect.top) / (startPos - endPos);
-                progress = Math.max(0, Math.min(1, progress));
-                
-                const scale = 0.5 + (0.5 * progress);
-                const opacity = progress;
-                
-                card.style.transform = `scale(${scale})`;
-                card.style.opacity = opacity;
-            }, { passive: true });
-            
-            window.dispatchEvent(new Event('scroll'));
+          if (reducedMotion) {
+            card.style.transform = "scale(1)";
+            card.style.opacity = "1";
+            return;
+          }
+
+          card.style.transform = "scale(0.5)";
+          card.style.opacity = "0";
+
+          window.addEventListener(
+            "scroll",
+            () => {
+              const rect = section.getBoundingClientRect();
+              const windowHeight = window.innerHeight;
+
+              const startPos = windowHeight;
+              const endPos = windowHeight * 0.2;
+
+              let progress = (startPos - rect.top) / (startPos - endPos);
+              progress = Math.max(0, Math.min(1, progress));
+
+              const scale = 0.5 + 0.5 * progress;
+              const opacity = progress;
+
+              card.style.transform = `scale(${scale})`;
+              card.style.opacity = opacity;
+            },
+            { passive: true },
+          );
+
+          window.dispatchEvent(new Event("scroll"));
         });
-    </script>
+      </script>
 
-
-    <!-- CONTACT SECTION -->
-        <!-- CONTACT SECTION -->
-    <section id="contact" data-bg="bg-tesoro-cora" class="max-w-5xl mx-auto px-4 sm:px-6 md:px-20 py-16 md:py-24 flex flex-col md:flex-row gap-8 md:gap-16 scroll-mt-24">
+      <!-- CONTACT SECTION -->
+      <!-- CONTACT SECTION -->
+      <section
+        id="contact"
+        data-bg="bg-tesoro-cora"
+        class="max-w-5xl mx-auto px-4 sm:px-6 md:px-20 py-16 md:py-24 flex flex-col md:flex-row gap-8 md:gap-16 scroll-mt-24"
+      >
         <div class="flex-1 flex flex-col gap-6 md:gap-8">
-            <h1 class="text-5xl md:text-7xl font-black text-black tracking-tighter leading-none">Parlons<br><span class="text-tesoro-orange">Projets.</span></h1>
-            
-            <div class="contact-info-card bg-white rounded-3xl p-8 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mt-4 md:mt-8">
-                <h3 class="text-2xl font-black mb-6">Contact direct</h3>
-                <div class="flex flex-col gap-4">
-                    <div class="contact-row flex items-center gap-4">
-                        <div class="contact-icon w-12 h-12 rounded-full bg-tesoro-mint border-2 border-black flex items-center justify-center font-black">T</div>
-                        <p class="font-bold text-lg break-all">+243 822 303 668</p>
-                    </div>
-                    <div class="contact-row flex items-center gap-4">
-                        <div class="contact-icon w-12 h-12 rounded-full bg-tesoro-yellow border-2 border-black flex items-center justify-center font-black">@</div>
-                        <p class="font-bold text-lg break-all">salemko801@gmail.com</p>
-                    </div>
+          <h1
+            class="text-5xl md:text-7xl font-black text-black tracking-tighter leading-none"
+          >
+            Parlons<br /><span class="text-tesoro-orange">Projets.</span>
+          </h1>
+
+          <div
+            class="contact-info-card bg-white rounded-3xl p-8 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mt-4 md:mt-8"
+          >
+            <h3 class="text-2xl font-black mb-6">Contact direct</h3>
+            <div class="flex flex-col gap-4">
+              <div class="contact-row flex items-center gap-4">
+                <div
+                  class="contact-icon w-12 h-12 rounded-full bg-tesoro-mint border-2 border-black flex items-center justify-center font-black"
+                >
+                  T
                 </div>
+                <p class="font-bold text-lg break-all">+243 822 303 668</p>
+              </div>
+              <div class="contact-row flex items-center gap-4">
+                <div
+                  class="contact-icon w-12 h-12 rounded-full bg-tesoro-yellow border-2 border-black flex items-center justify-center font-black"
+                >
+                  @
+                </div>
+                <p class="font-bold text-lg break-all">salemko801@gmail.com</p>
+              </div>
             </div>
+          </div>
         </div>
 
-        <div class="contact-form-card flex-1 bg-tesoro-dark rounded-[3rem] p-6 md:p-12 border-4 border-black shadow-2xl" style="transform-origin: center center; will-change: transform, opacity;">
-            <form class="flex flex-col gap-5 md:gap-6 text-white">
-                <div class="flex flex-col md:flex-row gap-5 md:gap-6">
-                    <div class="flex flex-col flex-1 gap-2">
-                        <label for="fname" class="font-bold ml-2 text-tesoro-mint">Nom</label>
-                        <input type="text" id="fname" class="bg-tesoro-card border-2 border-transparent focus:border-tesoro-orange rounded-2xl p-4 text-white outline-none transition-colors w-full">
-                    </div>
-                    <div class="flex flex-col flex-1 gap-2">
-                        <label for="lname" class="font-bold ml-2 text-tesoro-mint">Prénom</label>
-                        <input type="text" id="lname" class="bg-tesoro-card border-2 border-transparent focus:border-tesoro-orange rounded-2xl p-4 text-white outline-none transition-colors w-full">
-                    </div>
-                </div>
-                
-                <div class="flex flex-col gap-2">
-                    <label for="email" class="font-bold ml-2 text-tesoro-mint">Email</label>
-                    <input type="email" id="email" class="bg-tesoro-card border-2 border-transparent focus:border-tesoro-orange rounded-2xl p-4 text-white outline-none transition-colors w-full">
-                </div>
-                
-                <div class="flex flex-col gap-2">
-                    <label for="subject" class="font-bold ml-2 text-tesoro-mint">Sujet</label>
-                    <input type="text" id="subject" class="bg-tesoro-card border-2 border-transparent focus:border-tesoro-yellow rounded-2xl p-4 text-white outline-none transition-colors w-full">
-                </div>
-                
-                <div class="flex flex-col gap-2">
-                    <label for="message" class="font-bold ml-2 text-tesoro-mint">Message</label>
-                    <textarea id="message" rows="5" class="bg-tesoro-card border-2 border-transparent focus:border-tesoro-mint rounded-2xl p-4 text-white outline-none resize-none transition-colors w-full"></textarea>
-                </div>
-                
-                <div class="mt-2 md:mt-4">
-                    <button type="submit" class="w-full bg-tesoro-orange text-black font-black text-lg md:text-xl py-4 md:py-5 rounded-2xl border-4 border-black hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] transition-all">
-                        Envoyer le message
-                    </button>
-                </div>
-            </form>
-        </div>
-    </section>
+        <div
+          class="contact-form-card flex-1 bg-tesoro-dark rounded-[3rem] p-6 md:p-12 border-4 border-black shadow-2xl"
+          style="
+            transform-origin: center center;
+            will-change: transform, opacity;
+          "
+        >
+          <form class="flex flex-col gap-5 md:gap-6 text-white">
+            <div class="flex flex-col md:flex-row gap-5 md:gap-6">
+              <div class="flex flex-col flex-1 gap-2">
+                <label for="fname" class="font-bold ml-2 text-tesoro-mint"
+                  >Nom</label
+                >
+                <input
+                  type="text"
+                  id="fname"
+                  class="bg-tesoro-card border-2 border-transparent focus:border-tesoro-orange rounded-2xl p-4 text-white outline-none transition-colors w-full"
+                />
+              </div>
+              <div class="flex flex-col flex-1 gap-2">
+                <label for="lname" class="font-bold ml-2 text-tesoro-mint"
+                  >Prénom</label
+                >
+                <input
+                  type="text"
+                  id="lname"
+                  class="bg-tesoro-card border-2 border-transparent focus:border-tesoro-orange rounded-2xl p-4 text-white outline-none transition-colors w-full"
+                />
+              </div>
+            </div>
 
-    <!-- Styles pour l'animation "Cadeau" -->
-    <style>
+            <div class="flex flex-col gap-2">
+              <label for="email" class="font-bold ml-2 text-tesoro-mint"
+                >Email</label
+              >
+              <input
+                type="email"
+                id="email"
+                class="bg-tesoro-card border-2 border-transparent focus:border-tesoro-orange rounded-2xl p-4 text-white outline-none transition-colors w-full"
+              />
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <label for="subject" class="font-bold ml-2 text-tesoro-mint"
+                >Sujet</label
+              >
+              <input
+                type="text"
+                id="subject"
+                class="bg-tesoro-card border-2 border-transparent focus:border-tesoro-yellow rounded-2xl p-4 text-white outline-none transition-colors w-full"
+              />
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <label for="message" class="font-bold ml-2 text-tesoro-mint"
+                >Message</label
+              >
+              <textarea
+                id="message"
+                rows="5"
+                class="bg-tesoro-card border-2 border-transparent focus:border-tesoro-mint rounded-2xl p-4 text-white outline-none resize-none transition-colors w-full"
+              ></textarea>
+            </div>
+
+            <div class="mt-2 md:mt-4">
+              <button
+                type="submit"
+                class="w-full bg-tesoro-orange text-black font-black text-lg md:text-xl py-4 md:py-5 rounded-2xl border-4 border-black hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] transition-all"
+              >
+                Envoyer le message
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Styles pour l'animation "Cadeau" -->
+      <style>
         @keyframes gift-pop {
-            0% { transform: scale(0) translateY(100px) rotate(-10deg); opacity: 0; }
-            60% { transform: scale(1.05) translateY(-20px) rotate(2deg); opacity: 1; }
-            80% { transform: scale(0.98) translateY(10px) rotate(-1deg); opacity: 1; }
-            100% { transform: scale(1) translateY(0) rotate(0deg); opacity: 1; }
+          0% {
+            transform: scale(0) translateY(100px) rotate(-10deg);
+            opacity: 0;
+          }
+          60% {
+            transform: scale(1.05) translateY(-20px) rotate(2deg);
+            opacity: 1;
+          }
+          80% {
+            transform: scale(0.98) translateY(10px) rotate(-1deg);
+            opacity: 1;
+          }
+          100% {
+            transform: scale(1) translateY(0) rotate(0deg);
+            opacity: 1;
+          }
         }
         .gift-hidden {
-            transform: scale(0);
-            opacity: 0;
+          transform: scale(0);
+          opacity: 0;
         }
         .animate-gift-pop {
-            animation: gift-pop 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+          animation: gift-pop 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
         }
 
         @media (max-width: 767px) {
-            #contact h1 {
-                font-size: 2.75rem;
-                line-height: 0.95;
-            }
+          #contact h1 {
+            font-size: 2.75rem;
+            line-height: 0.95;
+          }
 
-            #contact .contact-info-card,
-            #contact .contact-form-card {
-                border-width: 3px;
-                border-radius: 1.5rem;
-                padding: 1rem;
-                box-shadow: 6px 6px 0 rgba(0, 0, 0, 1);
-            }
+          #contact .contact-info-card,
+          #contact .contact-form-card {
+            border-width: 3px;
+            border-radius: 1.5rem;
+            padding: 1rem;
+            box-shadow: 6px 6px 0 rgba(0, 0, 0, 1);
+          }
 
-            #contact .contact-info-card h3 {
-                margin-bottom: 1rem;
-                font-size: 1.35rem;
-            }
+          #contact .contact-info-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.35rem;
+          }
 
-            #contact .contact-row {
-                align-items: flex-start;
-                gap: 0.75rem;
-            }
+          #contact .contact-row {
+            align-items: flex-start;
+            gap: 0.75rem;
+          }
 
-            #contact .contact-icon {
-                width: 2.5rem;
-                height: 2.5rem;
-                flex: 0 0 auto;
-            }
+          #contact .contact-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            flex: 0 0 auto;
+          }
 
-            #contact .contact-row p {
-                padding-top: 0.45rem;
-                font-size: 1rem;
-                line-height: 1.25;
-            }
+          #contact .contact-row p {
+            padding-top: 0.45rem;
+            font-size: 1rem;
+            line-height: 1.25;
+          }
 
-            #contact label {
-                margin-left: 0;
-                font-size: 0.95rem;
-            }
+          #contact label {
+            margin-left: 0;
+            font-size: 0.95rem;
+          }
 
-            #contact input,
-            #contact textarea {
-                border-radius: 1rem;
-                padding: 0.85rem 1rem;
-                font-size: 1rem;
-            }
+          #contact input,
+          #contact textarea {
+            border-radius: 1rem;
+            padding: 0.85rem 1rem;
+            font-size: 1rem;
+          }
 
-            #contact textarea {
-                min-height: 9rem;
-            }
+          #contact textarea {
+            min-height: 9rem;
+          }
 
-            #contact button {
-                border-width: 3px;
-                border-radius: 1rem;
-                white-space: normal;
-                line-height: 1.15;
-            }
+          #contact button {
+            border-width: 3px;
+            border-radius: 1rem;
+            white-space: normal;
+            line-height: 1.15;
+          }
         }
-    </style>
+      </style>
 
-    <!-- Script pour l'animation au scroll du formulaire -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const card = document.querySelector('.contact-form-card');
-            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            const isMobile = window.matchMedia('(max-width: 767px)').matches;
+      <!-- Script pour l'animation au scroll du formulaire -->
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const card = document.querySelector(".contact-form-card");
+          const reducedMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)",
+          ).matches;
+          const isMobile = window.matchMedia("(max-width: 767px)").matches;
 
-            if (!card) return;
+          if (!card) return;
 
-            if (isMobile || reducedMotion) {
-                card.classList.remove('gift-hidden', 'animate-gift-pop');
-                return;
-            }
-            
-            // On cache la carte au départ
-            card.classList.add('gift-hidden');
+          if (isMobile && !reducedMotion) {
+            window.setupMobileReveal(card);
+            return;
+          }
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // Dès que 20% du formulaire est visible à l'écran, on déclenche l'animation
-                        card.classList.remove('gift-hidden');
-                        card.classList.add('animate-gift-pop');
-                    } else {
-                        // Dès que le formulaire sort de l'écran, on le recache 
-                        // pour que l'animation puisse se rejouer la prochaine fois !
-                        card.classList.remove('animate-gift-pop');
-                        card.classList.add('gift-hidden');
-                    }
-                });
-            }, {
-                threshold: 0.2 // Se déclenche quand 20% de la zone est visible
-            });
-            
-            observer.observe(card);
+          if (reducedMotion) {
+            card.classList.remove("gift-hidden", "animate-gift-pop");
+            return;
+          }
+
+          // On cache la carte au départ
+          card.classList.add("gift-hidden");
+
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  // Dès que 20% du formulaire est visible à l'écran, on déclenche l'animation
+                  card.classList.remove("gift-hidden");
+                  card.classList.add("animate-gift-pop");
+                } else {
+                  // Dès que le formulaire sort de l'écran, on le recache
+                  // pour que l'animation puisse se rejouer la prochaine fois !
+                  card.classList.remove("animate-gift-pop");
+                  card.classList.add("gift-hidden");
+                }
+              });
+            },
+            {
+              threshold: 0.2, // Se déclenche quand 20% de la zone est visible
+            },
+          );
+
+          observer.observe(card);
         });
-    </script>
-
+      </script>
     </div>
 
     <footer class="bg-tesoro-dark text-white py-16 px-8 md:px-20 mt-auto">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-10">
-            <div class="flex flex-col gap-2">
-                <h5 class="text-tesoro-mint font-bold text-xl mb-2">Contact</h5>
-                <p class="text-gray-400 hover:text-white transition-colors">+243 822 303 668</p>
-                <p class="text-gray-400 hover:text-white transition-colors">salemko801@gmail.com</p>
-            </div>
-            <div class="flex flex-col gap-2">
-                <h5 class="text-tesoro-mint font-bold text-xl mb-2">Réseaux</h5>
-                <div class="flex gap-4">
-                    <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-tesoro-orange transition-colors duration-300">
-                        <img src="images/facebook_logo.png" alt="facebook" class="h-5">
-                    </a>
-                    <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-tesoro-orange transition-colors duration-300">
-                        <img src="images/instagram.jpeg" alt="instagram" class="h-5 rounded-full">
-                    </a>
-                    <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-tesoro-orange transition-colors duration-300">
-                        <img src="images/linkdin.jpeg" alt="linkedin" class="h-5 rounded-full">
-                    </a>
-                </div>
-            </div>
-            <div class="flex flex-col justify-end">
-                <p class="text-gray-500 font-medium">© 2025 Salem Kongolo.<br>Tous droits réservés.</p>
-            </div>
+      <div
+        class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-10"
+      >
+        <div class="flex flex-col gap-2">
+          <h5 class="text-tesoro-mint font-bold text-xl mb-2">Contact</h5>
+          <p class="text-gray-400 hover:text-white transition-colors">
+            +243 822 303 668
+          </p>
+          <p class="text-gray-400 hover:text-white transition-colors">
+            salemko801@gmail.com
+          </p>
         </div>
+        <div class="flex flex-col gap-2">
+          <h5 class="text-tesoro-mint font-bold text-xl mb-2">Réseaux</h5>
+          <div class="flex gap-4">
+            <a
+              href="#"
+              class="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-tesoro-orange transition-colors duration-300"
+            >
+              <img src="images/facebook_logo.png" alt="facebook" class="h-5" />
+            </a>
+            <a
+              href="#"
+              class="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-tesoro-orange transition-colors duration-300"
+            >
+              <img
+                src="images/instagram.jpeg"
+                alt="instagram"
+                class="h-5 rounded-full"
+              />
+            </a>
+            <a
+              href="#"
+              class="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-tesoro-orange transition-colors duration-300"
+            >
+              <img
+                src="images/linkdin.jpeg"
+                alt="linkedin"
+                class="h-5 rounded-full"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="flex flex-col justify-end">
+          <p class="text-gray-500 font-medium">
+            © 2025 Salem Kongolo.<br />Tous droits réservés.
+          </p>
+        </div>
+      </div>
     </footer>
-    
+
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-    const body = document.getElementById('app-body');
-    const sections = document.querySelectorAll('section[data-bg]');
-    const bgClasses = ['bg-tesoro-mint', 'bg-tesoro-yellow', 'bg-tesoro-dark', 'bg-tesoro-orange', 'bg-white', 'bg-tesoro-sand', 'bg-tesoro-coral', 'bg-tesoro-cora', 'bg-tesoro-perso', 'bg-tesoro-moim'];
+      document.addEventListener("DOMContentLoaded", () => {
+        const body = document.getElementById("app-body");
+        const sections = document.querySelectorAll("section[data-bg]");
+        const bgClasses = [
+          "bg-tesoro-mint",
+          "bg-tesoro-yellow",
+          "bg-tesoro-dark",
+          "bg-tesoro-orange",
+          "bg-white",
+          "bg-tesoro-sand",
+          "bg-tesoro-coral",
+          "bg-tesoro-cora",
+          "bg-tesoro-perso",
+          "bg-tesoro-moim",
+        ];
 
-    function updateBodyBackground() {
-        const triggerPoint = window.innerHeight / 2;
-        let currentBg = sections[0].getAttribute('data-bg');
+        function updateBodyBackground() {
+          const triggerPoint = window.innerHeight / 2;
+          let currentBg = sections[0].getAttribute("data-bg");
 
-        sections.forEach(section => {
+          sections.forEach((section) => {
             const rect = section.getBoundingClientRect();
 
             if (rect.top <= triggerPoint) {
-                currentBg = section.getAttribute('data-bg');
+              currentBg = section.getAttribute("data-bg");
             }
+          });
+
+          body.classList.remove(...bgClasses);
+          body.classList.add(currentBg);
+        }
+
+        window.addEventListener("scroll", updateBodyBackground, {
+          passive: true,
         });
+        window.addEventListener("resize", updateBodyBackground);
 
-        body.classList.remove(...bgClasses);
-        body.classList.add(currentBg);
-    }
-
-    window.addEventListener('scroll', updateBodyBackground, { passive: true });
-    window.addEventListener('resize', updateBodyBackground);
-
-    updateBodyBackground();
-});
-        </script>
-</body>
+        updateBodyBackground();
+      });
+    </script>
+  </body>
 </html>
-
-
-
